@@ -1,0 +1,169 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using TruckLink.Core.Entities;
+using TruckLink.Core.Interfaces;
+using TruckLink.Infrastructure.Data;
+
+namespace TruckLink.Logic.Services
+{
+    public class JobService : IJobService
+    {
+        private readonly TruckLinkDbContext _context;
+
+        public JobService(TruckLinkDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<Job>> GetAvailableJobsAsync()
+        {
+            return await _context.Jobs
+             .Include(j => j.Interests)
+             .Where(j => !j.IsAccepted && !j.IsCompleted)
+             .OrderByDescending(j => j.CreatedAt)
+             .ToListAsync();
+        }
+
+        public async Task AddJobAsync(Job job)
+        {
+            _context.Jobs.Add(job);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> AcceptJobAsync(int jobId, int driverId)
+        {
+            var job = await _context.Jobs
+                .Include(j => j.Interests)
+                .FirstOrDefaultAsync(j => j.Id == jobId);
+
+            if (job == null || job.IsAccepted)
+                return false;
+
+            var hasRequested = job.Interests.Any(i => i.DriverId == driverId);
+            if (!hasRequested)
+                return false;
+
+            job.IsAccepted = true;
+            job.AcceptedByDriverId = driverId;
+
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<List<Job>> GetJobsByDriverAsync(int driverId)
+        {
+            return await _context.Jobs
+                .Where(j => j.AcceptedByDriverId == driverId)
+                .ToListAsync();
+        }
+
+        public async Task<List<JobInterest>> GetInterestsForPosterAsync(int posterId)
+        {
+            return await _context.JobInterests
+                .Include(i => i.Driver)
+                .Include(i => i.Job)
+                .Where(i => i.Job.CreatedByUserId == posterId)
+                .ToListAsync();
+        }
+
+        public async Task<bool> RequestJobAsync(int jobId, int driverId, string mobileNumber)
+        {
+            var job = await _context.Jobs
+                .Include(j => j.Interests)
+                .FirstOrDefaultAsync(j => j.Id == jobId);
+
+            if (job == null || job.IsAccepted)
+                return false;
+
+            bool alreadyRequested = job.Interests.Any(i => i.DriverId == driverId);
+            if (alreadyRequested)
+                return false;
+
+            var interest = new JobInterest
+            {
+                JobId = jobId,
+                DriverId = driverId,
+                MobileNumber = mobileNumber,
+                RequestedAt = System.DateTime.UtcNow,
+                IsAccepted = false
+            };
+
+            _context.JobInterests.Add(interest);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<List<Job>> GetJobsDriverHasRequestedAsync(int driverId)
+        {
+            return await _context.JobInterests
+                .Include(i => i.Job)
+                .Where(i => i.DriverId == driverId)
+                .Select(i => i.Job)
+                .Distinct()
+                .ToListAsync();
+        }
+        public async Task<List<JobInterest>> GetJobInterestsByDriverAsync(int driverId)
+        {
+            return await _context.JobInterests
+                .Include(i => i.Job)
+                .Where(i => i.DriverId == driverId)
+                .ToListAsync();
+        }
+        public async Task<List<Job>> GetJobsWithRequestsForPosterAsync(int posterId)
+        {
+            return await _context.Jobs
+                .Where(j => j.CreatedByUserId == posterId)
+                .Include(j => j.Interests)
+                    .ThenInclude(i => i.Driver)
+                .OrderByDescending(j => j.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<bool> UpdateJobAsync(int jobId, Job updatedJob, int posterId)
+        {
+            var existingJob = await _context.Jobs.FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+
+            if (existingJob == null || existingJob.IsAccepted || existingJob.IsCompleted)
+                return false;
+
+            existingJob.LoadItem = updatedJob.LoadItem;
+            existingJob.StartLocation = updatedJob.StartLocation;
+            existingJob.Destination = updatedJob.Destination;
+            existingJob.Earnings = updatedJob.Earnings;
+            existingJob.DistanceKm = updatedJob.DistanceKm;
+            existingJob.MapUrl = updatedJob.MapUrl;
+
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteJobAsync(int jobId, int posterId)
+        {
+            var job = await _context.Jobs.FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+
+            if (job.IsAccepted || job.IsCompleted)
+                return false;
+
+            if (job == null || job.IsAccepted)
+                return false;
+
+            _context.Jobs.Remove(job);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> MarkJobAsCompletedAsync(int jobId, int posterId)
+        {
+            var job = await _context.Jobs.FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+            if (job == null || !job.IsAccepted || job.IsCompleted)
+                return false;
+
+            job.IsCompleted = true;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+    }
+}

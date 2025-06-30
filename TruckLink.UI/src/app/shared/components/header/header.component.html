@@ -1,0 +1,28 @@
+<header>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+        <div>
+            <img class="logo" src="logo.png" alt="">
+        </div>
+        <div class="headerLinks">
+            <ul>
+                <li>
+                    <a routerLink="home" routerLinkActive="active" *ngIf="isDriverOrPoster$ | async">Home</a>
+                </li>
+                <li>
+                    <a routerLink="my-trips" routerLinkActive="active" *ngIf="isDriver$ | async">My Trips</a>
+                </li>
+                <li>
+                    <a routerLink="manage-trips" routerLinkActive="active" *ngIf="isPoster$ | async">Manage my trips</a>
+                </li>
+                <li>
+                    <a routerLink="add-job" routerLinkActive="active" *ngIf="isPoster$ | async">Add trip</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="logout()">Logout</button>
+        </div>
+    </div>
+    </div>
+</header>

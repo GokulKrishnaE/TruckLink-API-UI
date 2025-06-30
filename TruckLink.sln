@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckLink.Core", "TruckLink.Core\TruckLink.Core.csproj", "{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckLink.Infrastructure", "TruckLink.Infrastructure\TruckLink.Infrastructure.csproj", "{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckLink.Logic", "TruckLink.Logic\TruckLink.Logic.csproj", "{4269A860-97E6-4086-87DD-F86ECC502481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckLink.API", "TruckLink.API\TruckLink.API.csproj", "{5ABC28EA-C755-416F-8B8E-7E7FE180A570}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4269A860-97E6-4086-87DD-F86ECC502481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4269A860-97E6-4086-87DD-F86ECC502481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4269A860-97E6-4086-87DD-F86ECC502481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4269A860-97E6-4086-87DD-F86ECC502481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABC28EA-C755-416F-8B8E-7E7FE180A570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABC28EA-C755-416F-8B8E-7E7FE180A570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABC28EA-C755-416F-8B8E-7E7FE180A570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABC28EA-C755-416F-8B8E-7E7FE180A570}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

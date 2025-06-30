@@ -1,0 +1,17 @@
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Logic.deps.json
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Logic.dll
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Logic.pdb
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Core.dll
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Infrastructure.dll
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Core.pdb
+G:\Projects\TruckLink\TruckLink.Logic\bin\Debug\net8.0\TruckLink.Infrastructure.pdb
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.csproj.AssemblyReference.cache
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.AssemblyInfoInputs.cache
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.AssemblyInfo.cs
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.csproj.CoreCompileInputs.cache
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLin.F6C4E54C.Up2Date
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.dll
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\refint\TruckLink.Logic.dll
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.pdb
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\ref\TruckLink.Logic.dll

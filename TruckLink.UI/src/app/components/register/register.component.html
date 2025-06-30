@@ -1,0 +1,50 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h1>Register</h1>
+
+  <div class="formItem mb-3">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name" />
+     <p class="error" *ngIf="!registerForm.get('name')!.valid && registerForm.get('name')!.touched">Name is required</p>
+  </div>
+
+  <div class="formItem mb-3">
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email" />
+    <p class="error" *ngIf="!registerForm.get('email')!.valid && registerForm.get('email')!.touched">Enter valid Email</p>
+  </div>
+
+  <div class="formItem mb-3">
+    <label>Password</label>
+    <input type="text" class="form-control" formControlName="password" /> 
+    <p class="error" *ngIf="!registerForm.get('password')!.valid && registerForm.get('password')!.touched">Enter valid Password</p>
+  </div>
+
+  <div class="formItem mb-3">
+    <label>Select Role:</label><br />
+    <div class="form-check form-check-inline">
+      <input
+        type="radio"
+        class="form-check-input"
+        formControlName="role"
+        [value]="'Driver'"
+        id="driverRole"
+      />
+      <label class="form-check-label" for="driverRole">I am a driver</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input
+        type="radio"
+        class="form-check-input"
+        formControlName="role"
+        [value]="'Poster'"
+        id="posterRole"
+      />
+      <label class="form-check-label" for="posterRole">I want to post jobs</label>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Register</button>
+
+  <p class="error" *ngIf="!registerForm.valid && registerForm.touched">Fill all fields</p>
+</form>

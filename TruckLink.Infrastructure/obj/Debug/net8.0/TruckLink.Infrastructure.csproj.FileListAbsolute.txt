@@ -1,0 +1,17 @@
+G:\Projects\TruckLink\TruckLink.Infrastructure\bin\Debug\net8.0\TruckLink.Infrastructure.deps.json
+G:\Projects\TruckLink\TruckLink.Infrastructure\bin\Debug\net8.0\TruckLink.Infrastructure.runtimeconfig.json
+G:\Projects\TruckLink\TruckLink.Infrastructure\bin\Debug\net8.0\TruckLink.Infrastructure.dll
+G:\Projects\TruckLink\TruckLink.Infrastructure\bin\Debug\net8.0\TruckLink.Infrastructure.pdb
+G:\Projects\TruckLink\TruckLink.Infrastructure\bin\Debug\net8.0\TruckLink.Core.dll
+G:\Projects\TruckLink\TruckLink.Infrastructure\bin\Debug\net8.0\TruckLink.Core.pdb
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.csproj.AssemblyReference.cache
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.AssemblyInfoInputs.cache
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.AssemblyInfo.cs
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.csproj.CoreCompileInputs.cache
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLin.51FBEE5A.Up2Date
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.dll
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\refint\TruckLink.Infrastructure.dll
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.pdb
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.genruntimeconfig.cache
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\ref\TruckLink.Infrastructure.dll

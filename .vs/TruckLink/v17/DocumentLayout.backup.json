@@ -1,0 +1,629 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Projects\\TruckLink\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250630150818_AddIsCompletedToJobs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TruckLink.Infrastructure\\Migrations\\20250630150818_AddIsCompletedToJobs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\mappers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\jobwithrequestsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\jobwithrequestsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\jobdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\jobdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\jobdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\jobdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|g:\\projects\\trucklink\\trucklink.logic\\services\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|solutionrelative:trucklink.logic\\services\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\interfaces\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\interfaces\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\entities\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\entities\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\acceptjobrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\acceptjobrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\interestedjobdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\interestedjobdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\jobinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\jobinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\entities\\jobinterest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\entities\\jobinterest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\migrations\\20250629165934_addjobinterestentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\migrations\\20250629165934_addjobinterestentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|g:\\projects\\trucklink\\trucklink.logic\\trucklink.logic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|solutionrelative:trucklink.logic\\trucklink.logic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\data\\trucklinkdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\data\\trucklinkdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|g:\\projects\\trucklink\\trucklink.logic\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|solutionrelative:trucklink.logic\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|g:\\projects\\trucklink\\trucklink.core\\trucklink.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8F0D71D0-FE5B-4B40-89D8-6D5229FD02C9}|TruckLink.Core\\TruckLink.Core.csproj|solutionrelative:trucklink.core\\trucklink.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\designtime\\dbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\designtime\\dbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\trucklink.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\trucklink.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\trucklink.infrastructure.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\trucklink.infrastructure.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\migrations\\20250629071555_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\migrations\\20250629071555_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250630150818_AddIsCompletedToJobs.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250630150818_AddIsCompletedToJobs.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250630150818_AddIsCompletedToJobs.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250630150818_AddIsCompletedToJobs.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250630150818_AddIsCompletedToJobs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T15:08:19.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "JobService.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\JobService.cs",
+              "RelativeDocumentMoniker": "TruckLink.Logic\\Services\\JobService.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\JobService.cs",
+              "RelativeToolTip": "TruckLink.Logic\\Services\\JobService.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAuwIcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:27:43.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JobsController.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\JobsController.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\Controllers\\JobsController.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "TruckLink.API\\Controllers\\JobsController.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAqwJQAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:29:21.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JobDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\JobDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:44:26.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IJobService.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IJobService.cs",
+              "RelativeDocumentMoniker": "TruckLink.Core\\Interfaces\\IJobService.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IJobService.cs",
+              "RelativeToolTip": "TruckLink.Core\\Interfaces\\IJobService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwB8AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:42:45.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Job.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\Job.cs",
+              "RelativeDocumentMoniker": "TruckLink.Core\\Entities\\Job.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\Job.cs",
+              "RelativeToolTip": "TruckLink.Core\\Entities\\Job.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwBwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T16:59:20.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JobDetailDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobDetailDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobDetailDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobDetailDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\JobDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:39:54.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\ApiResponse.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\ApiResponse.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T08:14:37.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AcceptJobRequestDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\AcceptJobRequestDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\AcceptJobRequestDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\AcceptJobRequestDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\AcceptJobRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:37:39.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\RegisterDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:31:59.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JobWithRequestsDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobWithRequestsDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobWithRequestsDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobWithRequestsDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\JobWithRequestsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T11:32:26.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Mappers\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\Mappers\\MappingProfile.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Mappers\\MappingProfile.cs",
+              "RelativeToolTip": "TruckLink.API\\Mappers\\MappingProfile.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:49:32.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "InterestedJobDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\InterestedJobDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\InterestedJobDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\InterestedJobDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\InterestedJobDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T11:04:06.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "JobInterest.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\JobInterest.cs",
+              "RelativeDocumentMoniker": "TruckLink.Core\\Entities\\JobInterest.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\JobInterest.cs",
+              "RelativeToolTip": "TruckLink.Core\\Entities\\JobInterest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:31:01.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "TruckLink.Core\\Interfaces\\IRepository.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "TruckLink.Core\\Interfaces\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:25:50.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JobInterestDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobInterestDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobInterestDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobInterestDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\JobInterestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:41:42.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20250629165934_AddJobInterestEntity.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629165934_AddJobInterestEntity.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629165934_AddJobInterestEntity.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629165934_AddJobInterestEntity.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629165934_AddJobInterestEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:59:35.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "TruckLink.Core\\Interfaces\\IAuthService.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "TruckLink.Core\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAACgShibBZUmwAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:23:18.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TruckLinkDbContext.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Data\\TruckLinkDbContext.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Data\\TruckLinkDbContext.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Data\\TruckLinkDbContext.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Data\\TruckLinkDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwA0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:00:15.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TruckLink.Logic.csproj",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Logic\\TruckLink.Logic.csproj",
+              "RelativeDocumentMoniker": "TruckLink.Logic\\TruckLink.Logic.csproj",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Logic\\TruckLink.Logic.csproj",
+              "RelativeToolTip": "TruckLink.Logic\\TruckLink.Logic.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-28T17:18:46.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\Controllers\\AuthController.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "TruckLink.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAowCsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:31:06.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20250629070841_AddCreatedByUserToJobDeleteChange.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T07:08:42.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Program.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\Program.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Program.cs",
+              "RelativeToolTip": "TruckLink.API\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:28:32.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\appsettings.json",
+              "RelativeDocumentMoniker": "TruckLink.API\\appsettings.json",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\appsettings.json",
+              "RelativeToolTip": "TruckLink.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-28T17:29:52.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20250629071336_AddCreatedByUserWithRestrict.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T07:13:36.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20250629070604_AddCreatedByUserToJob2.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T07:06:04.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20250629070745_AddCreatedByUserToJob3.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T07:07:45.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20250629071555_InitialCreate.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071555_InitialCreate.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629071555_InitialCreate.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071555_InitialCreate.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629071555_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T07:15:55.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250629071110_AddCreatedByUserToJob4.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T07:11:10.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "User.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "TruckLink.Core\\Entities\\User.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\User.cs",
+              "RelativeToolTip": "TruckLink.Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA0wB8AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T18:24:53.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "TruckLink.Logic\\Services\\AuthService.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\AuthService.cs",
+              "RelativeToolTip": "TruckLink.Logic\\Services\\AuthService.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAiwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:23:29.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\LoginDto.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\LoginDto.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\LoginDto.cs",
+              "RelativeToolTip": "TruckLink.API\\DTOs\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T06:32:19.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "TruckLink.Core.csproj",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\TruckLink.Core.csproj",
+              "RelativeDocumentMoniker": "TruckLink.Core\\TruckLink.Core.csproj",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\TruckLink.Core.csproj",
+              "RelativeToolTip": "TruckLink.Core\\TruckLink.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-28T17:17:25.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DbContextFactory.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\DesignTime\\DbContextFactory.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\DesignTime\\DbContextFactory.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\DesignTime\\DbContextFactory.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\DesignTime\\DbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:36:11.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Repositories\\Repository.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeToolTip": "TruckLink.Infrastructure\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:26:41.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "TruckLink.API.csproj",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\TruckLink.API.csproj",
+              "RelativeDocumentMoniker": "TruckLink.API\\TruckLink.API.csproj",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\TruckLink.API.csproj",
+              "RelativeToolTip": "TruckLink.API\\TruckLink.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-28T17:13:26.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "TruckLink.Infrastructure.csproj",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj",
+              "RelativeToolTip": "TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-28T17:02:08.9Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

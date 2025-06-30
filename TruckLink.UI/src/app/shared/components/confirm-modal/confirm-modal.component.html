@@ -1,0 +1,16 @@
+<div class="modal fade show d-block">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>{{confirmModalMessage}}</p>
+                <div class="d-flex align-items-center justify-content-between">
+                    <button class="btn btn-secondary" (click)="response('no')">No</button>
+                    <button class="btn btn-primary" (click)="response('yes')">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-backdrop show"></div>

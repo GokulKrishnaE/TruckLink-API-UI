@@ -1,0 +1,45 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace TruckLink.Core.Entities
+{
+    public class Job
+    {
+        public int Id { get; set; }
+
+        [Required, MaxLength(100)]
+        public string LoadItem { get; set; } = null!;
+
+        [Required, MaxLength(100)]
+        public string StartLocation { get; set; } = null!;
+
+        [Required, MaxLength(100)]
+        public string Destination { get; set; } = null!;
+
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Earnings { get; set; }
+
+        public double DistanceKm { get; set; }
+
+        [MaxLength(500)]
+        public string? MapUrl { get; set; }
+
+        public bool IsAccepted { get; set; }
+
+        public bool IsCompleted { get; set; } = false;
+
+        public int? AcceptedByDriverId { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        [ForeignKey(nameof(AcceptedByDriverId))]
+        public User? AcceptedByDriver { get; set; }
+
+        public int CreatedByUserId { get; set; }
+
+        [ForeignKey(nameof(CreatedByUserId))]
+        public User CreatedByUser { get; set; } = null!;
+
+        public ICollection<JobInterest> Interests { get; set; } = new List<JobInterest>();
+    }
+}

@@ -1,0 +1,14 @@
+
+<app-header *ngIf="isAuthorized$ | async"></app-header>
+<div class="body">
+  <div class="container">
+    <router-outlet />
+  </div>
+</div>
+
+
+<p-toast/>
+
+<div class="spinner" *ngIf="loading$ | async">
+  <img src="loading.gif" alt="Loading..." class="loader-gif" />
+</div>

@@ -1,0 +1,54 @@
+<div>
+    <div class="widgetBox">
+        <h1 class="userName" *ngIf="userName$ | async as user">Welcome, {{ user }}</h1>
+
+        <div  *ngIf="!jobDetail">
+            <h2>Available Jobs</h2>
+            <div class="jobsList">
+                <div class="row g-4">
+                    <div class="col-lg-4" *ngFor="let job of jobs">
+                        <div class="jobCard">
+                            <h3>{{job.loadItem}}</h3>
+                            <p class="jobCardLocation"><span class="from me-3">{{job.startLocation}}</span><span class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span class="to">{{job.destination}}</span></p>
+                            <p class="jobMoney">₹ {{job.earnings}}</p>
+                            <button class="btn btn-primary w-auto d-inline btn-sm" (click)="seeJob(job.id)">See Job</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jobDetailView" *ngIf="jobDetail">
+            <button class="goBackBtn" (click)="closeJobModal()"><i class="pi pi-arrow-left me-2"></i> Go back</button>
+            <h2>Job Details</h2>
+            <div class="jobDetailCard">
+                <p class="jobDetailsItem"><span>Load Details:</span> <span>{{jobDetail?.loadItem}}</span></p>
+                <p class="jobDetailsItem"><span>Start Location:</span> <span>{{jobDetail?.startLocation}}</span></p>
+                <p class="jobDetailsItem"><span>Destination:</span> <span>{{jobDetail?.destination}}</span></p>
+                <p class="jobDetailsItem"><span>Payment Details:</span> <span>₹ {{jobDetail?.earnings}}</span></p>
+                <p class="jobDetailsItem"><span>Total Distance:</span> <span>{{jobDetail?.distanceKm}} KM</span></p>
+                <p class="jobDetailsItem border-bottom-0"><span>Map URL:</span> <span><a [href]="jobDetail?.mapUrl" target="_black">See in maps</a></span></p>
+                <div class="text-end mt-5">
+                    <button class="btn btn-primary" (click)="getUserDetails()">I am interested</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade show d-block" data-static-backdrop="true" *ngIf="interested">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="formItem">
+                    <label for="" class="mb-2 fw-bold">Mobile Number</label>
+                    <input type="text" class="form-control" [(ngModel)]="userMobNumber">
+                </div>
+                <div class="text-end mt-4">
+                    <button class="btn btn-primary btn-sm" (click)="sendInterest()">Send Interest</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop show" *ngIf="interested"></div>

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "+tQvZJ+JGkFjL5emwXutHXm4BLDnxc1kwjCB4+ilYnI=",
+  "Source": "TruckLink.API",
+  "BasePath": "_content/TruckLink.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TruckLink.API.props" />
+</Project>

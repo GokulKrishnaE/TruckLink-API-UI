@@ -1,0 +1,11 @@
+G:\Projects\TruckLink\TruckLink.Core\bin\Debug\net8.0\TruckLink.Core.deps.json
+G:\Projects\TruckLink\TruckLink.Core\bin\Debug\net8.0\TruckLink.Core.dll
+G:\Projects\TruckLink\TruckLink.Core\bin\Debug\net8.0\TruckLink.Core.pdb
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.AssemblyInfoInputs.cache
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.AssemblyInfo.cs
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.csproj.CoreCompileInputs.cache
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.dll
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\refint\TruckLink.Core.dll
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.pdb
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\ref\TruckLink.Core.dll

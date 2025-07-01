@@ -4,24 +4,30 @@
         <div>
             <img class="logo" src="logo.png" alt="">
         </div>
-        <div class="headerLinks">
+        <div class="headerLinks" [ngClass]="{'active':isMenuOpen}">
             <ul>
-                <li>
-                    <a routerLink="home" routerLinkActive="active" *ngIf="isDriverOrPoster$ | async">Home</a>
+                <li *ngIf="isDriverOrPoster$ | async">
+                    <a routerLink="home" routerLinkActive="active">Home</a>
                 </li>
-                <li>
-                    <a routerLink="my-trips" routerLinkActive="active" *ngIf="isDriver$ | async">My Trips</a>
+                <li *ngIf="isDriver$ | async">
+                    <a routerLink="my-trips" routerLinkActive="active">My Trips</a>
                 </li>
-                <li>
-                    <a routerLink="manage-trips" routerLinkActive="active" *ngIf="isPoster$ | async">Manage my trips</a>
+                <li  *ngIf="isPoster$ | async">
+                    <a routerLink="manage-trips" routerLinkActive="active">Manage your trips</a>
                 </li>
-                <li>
-                    <a routerLink="add-job" routerLinkActive="active" *ngIf="isPoster$ | async">Add trip</a>
+                <li *ngIf="isPoster$ | async">
+                    <a routerLink="add-job" routerLinkActive="active">Add trip</a>
+                </li>
+                <li class="d-md-none">
+                    <a (click)="logout()">Logout</a>
                 </li>
             </ul>
         </div>
         <div>
-            <button class="btn btn-primary" (click)="logout()">Logout</button>
+            <button class="btn btn-primary d-none d-md-block" (click)="logout()">Logout</button>
+            <button class="hamburger-toggle d-md-none" (click)="toggleHamburger()">
+                <i class="pi pi-bars"></i>
+            </button>
         </div>
     </div>
     </div>

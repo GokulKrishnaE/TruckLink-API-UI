@@ -5,46 +5,75 @@
 body{
     background-color: rgb(241, 241, 241);
     font-family: "Lato", sans-serif;
+    color: black !important;
+}
+
+.body-bg img{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 h1,h2,h3,h4{
-    font-family: "Playfair Display", serif;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+h1{
+    font-weight: 500;
 }
 
 header{
     padding: 20px 0;
     margin-bottom: 60px;
-
-    .logo{
-        max-width: 140px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.11);
+}
+.logo,.logo img{
+    max-width: 140px;
+    @media(max-width:769px){
+        max-width: 90px;
     }
 }
-
 .widgetBox{
     background-color: white;
-    padding: 30px;
+    padding: 60px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.116);
     border-radius: 10px;
+    @media(max-width: 769px){
+        padding: 40px 20px;
+    }
 }
 
 .userName{
     font-size: 32px;
-    font-weight: 600;
-    color: #000066;
+    color: #00335e;
 }
 
 .btn{
     padding: 8px 32px;
     border-radius: 30px;
     font-size: 18px;
+    font-weight: 700;
 }
 .btn-sm{
-    padding: 4px 24px;
+    padding: 6px 24px;
     font-size: 16px;
+    min-width: 100px;
 }
 .btn-primary{
-    background-color: #000066;
-    border-color: #000066;
+    background-color: #00335e;
+    border-color: #00335e;
+}
+.btn-outline-primary{
+    border-color: #00335e;
+    color: #00335e;
 }
 .headerLinks{
     ul{
@@ -59,26 +88,56 @@ header{
             text-decoration: none;
             &.active{
                 padding-bottom: 4px;
-                // border-bottom: 4px solid #000066;
+                // border-bottom: 4px solid #00335e;
                 font-weight: 600;
-                color: #000066;
+                color: #00335e;
             }
+        }
+    }
+
+    @media(max-width:769px){
+        position: absolute;
+        height: calc(100vh - 80px);
+        background-color: white;
+        left: -100%;
+        top: 80px;
+        width: 80%;
+        padding: 30px;
+        transition: left 0.3 ease-in;
+        ul{
+            flex-direction: column;
+            li a{
+                font-size: 20px;
+            }
+        }
+        &.active{
+            left: 0;
         }
     }
 }
 
 h2{
-    font-size: 22px;
-    font-weight: 700;
-    margin: 30px 0;
+    font-size: 28px;
+    margin: 30px 0 60px;
+    border-bottom: 1px solid rgb(158, 158, 158);
+    padding-bottom: 18px;
 }
 
 .jobCard{
-    border: none !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.014);
+    border: 1px solid rgba(0, 0, 0, 0.068);
     padding: 30px;
+    background-color: #f7f7ff;
+    border-radius: 5px;
     h3{
-        font-weight: 22px;
+        font-size: 22px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .jobCardIcon i{
+            font-size: 30px;
+        }
     }
     .jobCardLocation{
         font-size: 20px;
@@ -142,6 +201,27 @@ h2{
             background: none !important;
         }
     }
+    .modal-body{
+        padding: 30px;
+        .modal-icon{
+            i{
+                font-size: 40px;
+                color: #ff9b2f;
+            }
+        }
+        h3{
+            font-size: 24px;
+            font-weight: 700;
+        }
+        p{
+            font-size: 18px;
+        }
+    }
+    &.confirmModal{
+        .modal-content{
+            background-color: #ffead4;
+        }
+    }
 }
 
 .goBackBtn{
@@ -151,7 +231,7 @@ h2{
     margin: 30px 0;
     font-weight: 600;
     font-size: 20px;
-    color: #000066;
+    color: #00335e;
     i{
         font-size: 20px; 
     }
@@ -176,6 +256,116 @@ h2{
 
 .link{
     font-weight: 600;
-    color: #000066;
+    color: #00335e;
     cursor: pointer;
+}
+
+.body{
+    height: 100vh;
+}
+
+.error{
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(223, 19, 19);
+    margin: 10px 0;
+}
+
+.loginContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    isolation: isolate;
+    .left,.right{
+        width: 50%;
+        height: 100%;
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-bg{
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+    }
+    @media(max-width:769px){
+        flex-direction: column-reverse;
+        .left,.right{
+            width: 100%;
+        }
+        .left{
+            position: absolute;
+            z-index: -1;
+            img{
+                object-fit: contain;
+                object-position: top;
+            }
+        }
+        .right{
+            background-color: white;
+            height: auto;
+            padding: 60px;
+        }
+    }
+}
+
+label{
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: black !important;
+}
+
+input[type="radio"] + label{
+    color: #00335e;
+}
+
+.p-tab{
+    font-size: 18px !important;
+}
+.p-tab-active{
+    border-color: #00335e !important;
+    color: #00335e !important;
+    font-weight: 600 !important;
+}
+.p-tablist-active-bar{
+    background-color: #00335e !important;;
+}
+.p-tabpanels{
+    color: black !important;
+}
+
+.table{
+    .actions{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        button{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            &.phone{
+                background-color: rgb(99, 167, 255) !important;
+                color: black;
+            }
+            &.accept{
+                background-color: rgb(0, 201, 77) !important;
+                color: black;
+            }
+        }
+    }
+
+    td,th{
+        vertical-align: middle;
+    }
 }

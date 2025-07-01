@@ -121,19 +121,21 @@ export class ManageTripsPosterComponent {
     }
     if(this.confirmItem==='delete'){
       this.confirmItem = ''
-      this.truckLinkService.deleteJob(this.jobDetail[0].jobId)
-      .subscribe({
-        next: (res)=>{
-          console.log(res)
-          this.commonService.showToast('success','Success','Job has been deleted successfully')
-          this.jobDetail = undefined
-          this.getPosterJobs()
-        },
-        error: (e)=>{
-          console.log(e)
-           this.commonService.showToast('error','Error',e.error.messaeg)
-        }
-      })
+      if(response==='yes'){
+        this.truckLinkService.deleteJob(this.jobDetail[0].jobId)
+        .subscribe({
+          next: (res)=>{
+            console.log(res)
+            this.commonService.showToast('success','Success','Job has been deleted successfully')
+            this.jobDetail = undefined
+            this.getPosterJobs()
+          },
+          error: (e)=>{
+            console.log(e)
+            this.commonService.showToast('error','Error',e.error.messaeg)
+          }
+        })
+      }
     }
     if(this.confirmItem==='completeJob'){
       this.confirmItem = ''

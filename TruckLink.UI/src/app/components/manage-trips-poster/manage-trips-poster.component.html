@@ -1,23 +1,28 @@
-<app-confirm-modal *ngIf="confirmItem" [confirmModalMessage]="confirmModalMessage" (confirmResponse)="confirmModalResponse($event)"></app-confirm-modal>
-<div class="widgetBox">
-    <h2>Jobs Your have posted</h2>
-    <div  *ngIf="!jobDetail">
-            <h2>Available Jobs</h2>
+<app-confirm-modal *ngIf="confirmItem" [confirmModalMessage]="confirmModalMessage"
+    (confirmResponse)="confirmModalResponse($event)"></app-confirm-modal>
+<div class="container">
+    <div class="widgetBox">
+        <h2 class="mt-0">Jobs You have posted</h2>
+        <div *ngIf="!jobDetail">
             <div class="jobsList">
-            <div class="row g-4">
-                <div class="col-lg-4" *ngFor="let postedJob of posterJobs">
-                    <div class="jobCard">
-                        <h3>{{postedJob.loadItem}}</h3>
-                        <p class="jobCardLocation"><span class="from me-3">{{postedJob.startLocation}}</span><span class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span class="to">{{postedJob.destination}}</span></p>
-                        <p class="jobMoney">₹ {{postedJob.earnings}}</p>
-                        <div class="button btn btn-primary btn-sm d-inline w-auto" (click)="openRequests(postedJob.jobId)">View Details</div>
+                <div class="row g-4">
+                    <div class="col-lg-4" *ngFor="let postedJob of posterJobs">
+                        <div class="jobCard">
+                            <h3><span class="jobCardIcon"><i class="pi pi-truck"></i></span>{{postedJob.loadItem}}</h3>
+                            <p class="jobCardLocation"><span class="from me-3"><i class="pi pi-map-marker"></i>{{postedJob.startLocation}}</span><span
+                                    class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span
+                                    class="to"><i class="pi pi-map-marker"></i>{{postedJob.destination}}</span></p>
+                            <p class="jobMoney">₹ {{postedJob.earnings}}</p>
+                            <button class="button btn btn-primary btn-sm d-inline w-auto"
+                                (click)="openRequests(postedJob.jobId)">View Details</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
         <div class="jobDetailView" *ngIf="jobDetail">
-            <button class="goBackBtn" (click)="closeRequestView()"><i class="pi pi-arrow-left me-2"></i> Go back</button>
+            <button class="goBackBtn" (click)="closeRequestView()"><i class="pi pi-arrow-left me-2"></i> Go
+                back</button>
             <p-tabs value="0">
                 <p-tablist>
                     <p-tab value="0">Details</p-tab>
@@ -28,13 +33,19 @@
                         <div class="d-lg-flex align-items-center justify-content-between">
                             <h2>Job Details</h2>
                             <div class="my-4">
-                                <button class="btn btn-primary me-3" *ngIf="!isEditing && !jobDetail[0]?.isCompleted && !jobDetail[0]?.isAccepted" (click)="editJob()">Edit</button>
-                                <button class="btn btn-primary me-3" *ngIf="!isEditing && !jobDetail[0]?.isCompleted && !jobDetail[0]?.isAccepted" (click)="deleteJobConfirm()">Delete</button>
-                                <button class="btn btn-primary" *ngIf="!jobDetail[0].isCompleted && !isEditing" (click)="completeJobConfirm()">Complete Job</button>
-                                <button class="btn btn-primary" *ngIf="isEditing" (click)="editJobSubmit()">Submit</button>
+                                <button class="btn btn-primary me-3"
+                                    *ngIf="!isEditing && !jobDetail[0]?.isCompleted && !jobDetail[0]?.isAccepted"
+                                    (click)="editJob()">Edit</button>
+                                <button class="btn btn-primary me-3"
+                                    *ngIf="!isEditing && !jobDetail[0]?.isCompleted && !jobDetail[0]?.isAccepted"
+                                    (click)="deleteJobConfirm()">Delete</button>
+                                <button class="btn btn-primary" *ngIf="!jobDetail[0].isCompleted && !isEditing"
+                                    (click)="completeJobConfirm()">Complete Job</button>
+                                <button class="btn btn-primary" *ngIf="isEditing"
+                                    (click)="editJobSubmit()">Submit</button>
                             </div>
                         </div>
-                        <div class="alert alert-success my-4" *ngIf="jobDetail[0].isCompleted" >
+                        <div class="alert alert-success my-4" *ngIf="jobDetail[0].isCompleted">
                             <p class="mb-0">This job is completed</p>
                         </div>
                         <form class="jobDetailCard" [formGroup]="jobForm">
@@ -70,16 +81,18 @@
 
                             <p class="jobDetailsItem border-bottom-0">
                                 <span>Map URL:</span>
-                                <span *ngIf="!isEditing"><a class="link" (click)="routeToMap(jobForm.value.mapUrl)" target="_blank">See in maps</a></span>
+                                <span *ngIf="!isEditing"><a class="link" (click)="routeToMap(jobForm.value.mapUrl)"
+                                        target="_blank">See in maps</a></span>
                                 <input *ngIf="isEditing" formControlName="mapUrl" />
                             </p>
                         </form>
                     </p-tabpanel>
                     <p-tabpanel value="1">
-                         <div class="alert alert-success my-4" *ngIf="jobDetail[0].isAccepted">
+                        <div class="alert alert-success my-4" *ngIf="jobDetail[0].isAccepted">
                             <p class="mb-0">This job has already been accepted</p>
                         </div>
-                        <h2 *ngIf="!jobDetail[0].interests.length; else interests">There are no requests for this job</h2>
+                        <h2 *ngIf="!jobDetail[0].interests.length; else interests">There are no requests for this job
+                        </h2>
                         <ng-template #interests>
                             <h2>Requests from Drivers</h2>
                             <div class="driverRequests">
@@ -89,7 +102,7 @@
                                             <th>Driver Name</th>
                                             <th>Driver Contact Number</th>
                                             <th>Requested At</th>
-                                            <th></th>
+                                            <th width="180px"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -99,8 +112,9 @@
                                             <td>{{i.requestedAt}}</td>
                                             <td>
                                                 <div class="actions">
-                                                    <button class="noStyle"><i class="pi pi-phone"></i></button>
-                                                    <button (click)="acceptJobConfirm(i.driverId)" class="noStyle"><i class="pi pi-check-circle"></i></button>
+                                                    <button class="noStyle phone"><i class="pi pi-phone"></i></button>
+                                                    <button (click)="acceptJobConfirm(i.driverId)" class="noStyle accept"><i
+                                                            class="pi pi-check-circle"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -112,4 +126,5 @@
                 </p-tabpanels>
             </p-tabs>
         </div>
+    </div>
 </div>

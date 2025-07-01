@@ -71,4 +71,8 @@ export class HomeComponent {
         this.jobDetail = null
     }
   }
+
+  closeInterestModal(){
+    this.interested = false
+  }
 }

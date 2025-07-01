@@ -1,15 +1,15 @@
-<div>
+<div class="container">
     <div class="widgetBox">
-        <h1 class="userName" *ngIf="userName$ | async as user">Welcome, {{ user }}</h1>
+        <!-- <h1 class="userName" *ngIf="userName$ | async as user">Welcome, {{ user }} !</h1> -->
 
         <div  *ngIf="!jobDetail">
-            <h2>Available Jobs</h2>
+            <h2 class="mt-0">Available Jobs</h2>
             <div class="jobsList">
                 <div class="row g-4">
                     <div class="col-lg-4" *ngFor="let job of jobs">
                         <div class="jobCard">
-                            <h3>{{job.loadItem}}</h3>
-                            <p class="jobCardLocation"><span class="from me-3">{{job.startLocation}}</span><span class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span class="to">{{job.destination}}</span></p>
+                            <h3><span class="jobCardIcon"><i class="pi pi-truck"></i></span>{{job.loadItem}}</h3>
+                            <p class="jobCardLocation"><span class="from me-3"><i class="pi pi-map-marker"></i> {{job.startLocation}}</span><span class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span class="to"><i class="pi pi-map-marker"></i> {{job.destination}}</span></p>
                             <p class="jobMoney">₹ {{job.earnings}}</p>
                             <button class="btn btn-primary w-auto d-inline btn-sm" (click)="seeJob(job.id)">See Job</button>
                         </div>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="jobDetailView" *ngIf="jobDetail">
-            <button class="goBackBtn" (click)="closeJobModal()"><i class="pi pi-arrow-left me-2"></i> Go back</button>
+            <button class="goBackBtn mt-0" (click)="closeJobModal()"><i class="pi pi-arrow-left me-2"></i> Go back</button>
             <h2>Job Details</h2>
             <div class="jobDetailCard">
                 <p class="jobDetailsItem"><span>Load Details:</span> <span>{{jobDetail?.loadItem}}</span></p>
@@ -44,7 +44,8 @@
                     <label for="" class="mb-2 fw-bold">Mobile Number</label>
                     <input type="text" class="form-control" [(ngModel)]="userMobNumber">
                 </div>
-                <div class="text-end mt-4">
+                <div class="d-flex align-items-center justify-content-between mt-5">
+                    <button class="btn btn-outline-primary btn-sm" (click)="closeInterestModal()">Cancel</button>
                     <button class="btn btn-primary btn-sm" (click)="sendInterest()">Send Interest</button>
                 </div>
             </div>

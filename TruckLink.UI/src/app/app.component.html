@@ -1,9 +1,10 @@
 
 <app-header *ngIf="isAuthorized$ | async"></app-header>
+<div *ngIf="isAuthorized$ | async" class="body-bg">
+  <img src="body-bg.jpg" alt="">
+</div>
 <div class="body">
-  <div class="container">
-    <router-outlet />
-  </div>
+  <router-outlet />
 </div>
 
 

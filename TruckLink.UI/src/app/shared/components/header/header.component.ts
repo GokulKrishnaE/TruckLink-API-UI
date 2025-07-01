@@ -12,6 +12,7 @@ export class HeaderComponent {
   isDriver$
   isPoster$
   isDriverOrPoster$ 
+  isMenuOpen = false;
 
   constructor(private authService:AuthService){
     this.isDriver$ = this.authService.isDriver$
@@ -24,6 +25,10 @@ export class HeaderComponent {
 
   logout(){
     this.authService.logout()
+  }
+
+  toggleHamburger(){
+    this.isMenuOpen = !this.isMenuOpen
   }
 
 }

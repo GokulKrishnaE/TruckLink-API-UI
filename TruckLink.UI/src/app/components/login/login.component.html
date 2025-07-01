@@ -1,23 +1,38 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <h1>Login</h1>
-
-  <div class="formItem mb-3">
-    <label>Email</label>
-    <input type="email" class="form-control" formControlName="email" />
-    <p class="error" *ngIf="!loginForm.get('email')!.valid && loginForm.get('email')!.touched">
-      Enter a valid Email
-    </p>
+<div class="loginContainer">
+  <div class="left">
+    <div class="login-bg">
+      <img src="login-img.jpg" alt="">
+    </div>
   </div>
+  <div class="right">
+    <div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="logo mb-3">
+            <img src="logo.png" alt="">
+          </div>
+          <h1 class="my-3">Login</h1>
 
-  <div class="formItem mb-3">
-    <label>Password</label>
-    <input type="password" class="form-control" formControlName="password" />
-    <p class="error" *ngIf="!loginForm.get('password')!.valid && loginForm.get('password')!.touched">
-      Password is required
-    </p>
+          <div class="formItem mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" />
+            <p class="error" *ngIf="!loginForm.get('email')!.valid && loginForm.get('email')!.touched">
+              Enter a valid Email
+            </p>
+          </div>
+
+          <div class="formItem mb-3">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" formControlName="password" />
+            <p class="error" *ngIf="!loginForm.get('password')!.valid && loginForm.get('password')!.touched">
+              Password is required
+            </p>
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+
+          <p class="error" *ngIf="formSubmitted && !loginForm.valid">Fill in all fields correctly.</p>
+      </form>
+      <p class="mt-4">Don't have an account? <a routerLink="/register">Register now</a></p>
+    </div>
   </div>
-
-  <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
-
-  <p class="error" *ngIf="formSubmitted && !loginForm.valid">Fill in all fields correctly.</p>
-</form>
+</div>

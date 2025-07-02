@@ -1,8 +1,31 @@
-# Ignore Visual Studio settings
+# Visual Studio
 .vs/
-*.user
 *.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Ignore build artifacts
+# Build Results
 bin/
 obj/
+*.dll
+*.exe
+*.pdb
+
+# ASP.NET
+appsettings.*.json
+
+# Dotnet specific
+*.dbmdl
+*.bak
+*.log
+
+# Angular specific
+dist/
+node_modules/
+*.log
+.env
+
+# Others
+*.swp
+*.DS_Store

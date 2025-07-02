@@ -11,6 +11,20 @@
               Required
             </div>
           </div>
+          <div class="mb-3">
+            <label class="mb-2 fw-bold">Details</label>
+            <textarea rows="4" formControlName="description"  class="form-control"></textarea>
+            <div *ngIf="jobForm.get('description')?.touched && jobForm.get('description')?.invalid" class="error">
+              Required
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="mb-2 fw-bold">Contact Info</label>
+            <textarea rows="4" formControlName="contactInfo"  class="form-control"></textarea>
+            <div *ngIf="jobForm.get('contactInfo')?.touched && jobForm.get('contactInfo')?.invalid" class="error">
+              Required
+            </div>
+          </div>
 
           <div class="mb-3">
             <label class="mb-2 fw-bold">Start Location:</label>

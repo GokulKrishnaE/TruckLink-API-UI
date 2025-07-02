@@ -27,6 +27,8 @@ export class ManageTripsPosterComponent {
   ){
     this.jobForm = this.fb.group({
       loadItem: ['', Validators.required],
+      description: ['', Validators.required],
+      contactInfo: ['', Validators.required],
       startLocation: ['', Validators.required],
       destination: ['', Validators.required],
       earnings: [0, Validators.required],
@@ -43,6 +45,8 @@ export class ManageTripsPosterComponent {
   setJobsInForm() {
     this.jobForm.patchValue({
       loadItem: this.jobDetail[0].loadItem,
+      description: this.jobDetail[0].description,
+      contactInfo: this.jobDetail[0].contactInfo,
       startLocation: this.jobDetail[0].startLocation,
       destination: this.jobDetail[0].destination,
       earnings: this.jobDetail[0].earnings,
@@ -57,6 +61,7 @@ export class ManageTripsPosterComponent {
     .subscribe({
       next: (res:any)=>{
         this.posterJobs = res.data.jobs
+        console.log(this.posterJobs)
       },
       error: (e)=>{
         console.log(e)
@@ -101,13 +106,13 @@ export class ManageTripsPosterComponent {
   confirmModalResponse(response:string){
     if(this.confirmItem==='accept'){
       this.confirmItem = ''
-      this.acceptDriverId = 0
       if(!this.jobDetail[0].isAccepted){
         if(response==='yes'){
           this.truckLinkService.acceptRequest(this.jobDetail[0].jobId,this.acceptDriverId)
           .subscribe({
             next:(res)=>{
               this.commonService.showToast('success','Success','Driver has been accepted for this job')
+              this.acceptDriverId = 0
             },
             error:(e)=>{
               this.commonService.showToast('error','Error','Something went wrong. Please try again')

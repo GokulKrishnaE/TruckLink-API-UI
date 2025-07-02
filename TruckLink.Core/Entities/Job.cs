@@ -5,10 +5,15 @@ namespace TruckLink.Core.Entities
 {
     public class Job
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required, MaxLength(100)]
         public string LoadItem { get; set; } = null!;
+
+        [Required]
+        public string Description { get; set; } = null!;
+
+        public string ContactInfo { get; set; } = null!;
 
         [Required, MaxLength(100)]
         public string StartLocation { get; set; } = null!;
@@ -28,14 +33,14 @@ namespace TruckLink.Core.Entities
 
         public bool IsCompleted { get; set; } = false;
 
-        public int? AcceptedByDriverId { get; set; }
+        public Guid? AcceptedByDriverId { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         [ForeignKey(nameof(AcceptedByDriverId))]
         public User? AcceptedByDriver { get; set; }
 
-        public int CreatedByUserId { get; set; }
+        public Guid CreatedByUserId { get; set; }
 
         [ForeignKey(nameof(CreatedByUserId))]
         public User CreatedByUser { get; set; } = null!;

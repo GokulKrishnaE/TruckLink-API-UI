@@ -15,3 +15,4 @@ G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\refint\TruckLink
 G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.pdb
 G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.genruntimeconfig.cache
 G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\ref\TruckLink.Infrastructure.dll
+G:\Projects\TruckLink\TruckLink.Infrastructure\obj\Debug\net8.0\TruckLink.Infrastructure.sourcelink.json

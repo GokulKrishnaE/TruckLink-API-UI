@@ -8,12 +8,12 @@ namespace TruckLink.Core.Entities
 {
     public class JobInterest
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int JobId { get; set; }
+        public Guid JobId { get; set; }
         public Job Job { get; set; } = null!;
 
-        public int DriverId { get; set; }
+        public Guid DriverId { get; set; }
         public User Driver { get; set; } = null!;
 
         public string MobileNumber { get; set; } = null!;

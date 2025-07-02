@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TruckLink.Core.Entities;
 
@@ -10,25 +11,26 @@ namespace TruckLink.Core.Interfaces
 
         Task AddJobAsync(Job job);
 
-        Task<bool> AcceptJobAsync(int jobId, int driverId);
+        Task<bool> AcceptJobAsync(Guid jobId, Guid driverId);
 
-        Task<List<Job>> GetJobsByDriverAsync(int driverId);
+        Task<List<Job>> GetJobsByDriverAsync(Guid driverId);
 
         // Get all driver requests (interests) for a given poster (job creator)
-        Task<List<JobInterest>> GetInterestsForPosterAsync(int posterId);
+        Task<List<JobInterest>> GetInterestsForPosterAsync(Guid posterId);
 
         // Drivers request a job by sending mobile number
-        Task<bool> RequestJobAsync(int jobId, int driverId, string mobileNumber);
+        Task<bool> RequestJobAsync(Guid jobId, Guid driverId, string mobileNumber);
 
-        Task<List<Job>> GetJobsDriverHasRequestedAsync(int driverId);
+        Task<List<Job>> GetJobsDriverHasRequestedAsync(Guid driverId);
 
-        Task<List<JobInterest>> GetJobInterestsByDriverAsync(int driverId);
+        Task<List<JobInterest>> GetJobInterestsByDriverAsync(Guid driverId);
 
-        Task<List<Job>> GetJobsWithRequestsForPosterAsync(int posterId);
+        Task<List<Job>> GetJobsWithRequestsForPosterAsync(Guid posterId);
 
-        Task<bool> UpdateJobAsync(int jobId, Job updatedJob, int posterId);
-        Task<bool> DeleteJobAsync(int jobId, int posterId);
+        Task<bool> UpdateJobAsync(Guid jobId, Job updatedJob, Guid posterId);
 
-        Task<bool> MarkJobAsCompletedAsync(int jobId, int posterId);
+        Task<bool> DeleteJobAsync(Guid jobId, Guid posterId);
+
+        Task<bool> MarkJobAsCompletedAsync(Guid jobId, Guid posterId);
     }
 }

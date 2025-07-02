@@ -2,7 +2,7 @@
 {
     public class AcceptJobRequestDto
     {
-        public int JobId { get; set; }
-        public int DriverId { get; set; }
+        public Guid JobId { get; set; }
+        public Guid DriverId { get; set; }
     }
 }

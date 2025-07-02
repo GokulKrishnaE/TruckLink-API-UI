@@ -23,10 +23,23 @@
                 </li>
             </ul>
         </div>
-        <div>
-            <button class="btn btn-primary d-none d-md-block" (click)="logout()">Logout</button>
-            <button class="hamburger-toggle d-md-none" (click)="toggleHamburger()">
-                <i class="pi pi-bars"></i>
+        <div class="align-items-center gap-4 d-none d-md-flex">
+            <span class="userName">Hi {{userName$ | async}} !</span>
+            <div class="dropdown">
+            <button class="noStyle profileIconBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="pi pi-user"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item"><i class="pi pi-user-edit me-3"></i>My Profile</a></li>
+                <li><a class="dropdown-item" (click)="logout()"><i class="pi pi-sign-out me-3"></i>Logout</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="hamburger-toggle d-md-none"> 
+            <button (click)="toggleHamburger()"  class="hamburger noStyle" [class.open]="isMenuOpen">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </div>

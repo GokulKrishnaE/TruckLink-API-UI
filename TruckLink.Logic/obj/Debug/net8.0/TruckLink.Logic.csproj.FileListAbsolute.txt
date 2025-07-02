@@ -15,3 +15,4 @@ G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.dll
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\refint\TruckLink.Logic.dll
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.pdb
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\ref\TruckLink.Logic.dll
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.sourcelink.json

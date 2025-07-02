@@ -9,3 +9,4 @@ G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.dll
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\refint\TruckLink.Core.dll
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.pdb
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\ref\TruckLink.Core.dll
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.sourcelink.json

@@ -54,6 +54,16 @@
                                 <span *ngIf="!isEditing">{{ jobForm.value.loadItem }}</span>
                                 <input *ngIf="isEditing" formControlName="loadItem" />
                             </p>
+                            <p class="jobDetailsItem">
+                                <span>Description:</span>
+                                <span *ngIf="!isEditing">{{ jobForm.value.description }}</span>
+                                <input *ngIf="isEditing" formControlName="description" />
+                            </p>
+                            <p class="jobDetailsItem">
+                                <span>Contact Info:</span>
+                                <span *ngIf="!isEditing">{{ jobForm.value.contactInfo }}</span>
+                                <input *ngIf="isEditing" formControlName="contactInfo" />
+                            </p>
 
                             <p class="jobDetailsItem">
                                 <span>Start Location:</span>
@@ -96,7 +106,8 @@
                         <ng-template #interests>
                             <h2>Requests from Drivers</h2>
                             <div class="driverRequests">
-                                <table class="table table-boardered">
+                                <div class="table-responsive">
+                                    <table class="table table-boardered">
                                     <thead>
                                         <tr>
                                             <th>Driver Name</th>
@@ -120,6 +131,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </ng-template>
                     </p-tabpanel>

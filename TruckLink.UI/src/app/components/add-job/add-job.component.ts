@@ -16,6 +16,8 @@ export class AddJobComponent {
   constructor(private fb: FormBuilder, private truckLinkService:TruckLinkService, private commonService:CommonService) {
     this.jobForm = this.fb.group({
       loadItem: ['', Validators.required],
+      description: ['', Validators.required],
+      contactInfo: ['', Validators.required],
       startLocation: ['', Validators.required],
       destination: ['', Validators.required],
       earnings: [null, [Validators.required, Validators.min(0)]],

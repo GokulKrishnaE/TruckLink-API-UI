@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "primeicons/primeicons.css";
 
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     background-color: rgb(241, 241, 241);
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: black !important;
 }
 
-.body-bg img{
+.body-bg img {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -18,75 +18,97 @@ body{
     opacity: 0.5;
 }
 
-h1,h2,h3,h4{
-    font-family: "Lato", sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-h1{
+h1,
+h2,
+h3,
+h4 {
+    // text-transform: uppercase;
     font-weight: 500;
 }
 
-header{
+h1 {
+    font-weight: 500;
+}
+
+header {
     padding: 20px 0;
     margin-bottom: 60px;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.11);
 }
-.logo,.logo img{
+
+.logo,
+.logo img {
     max-width: 140px;
-    @media(max-width:769px){
+
+    @media(max-width:769px) {
         max-width: 90px;
     }
 }
-.widgetBox{
+
+.widgetBox {
     background-color: white;
     padding: 60px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.116);
     border-radius: 10px;
-    @media(max-width: 769px){
+
+    @media(max-width: 769px) {
         padding: 40px 20px;
     }
 }
 
-.userName{
-    font-size: 32px;
+.userName {
+    font-size: 20px;
+    color: #00335e;
+    font-weight: 600;
+}
+
+.profileIconBtn i {
+    font-size: 22px;
     color: #00335e;
 }
 
-.btn{
+a {
+    cursor: pointer;
+}
+
+.btn {
     padding: 8px 32px;
     border-radius: 30px;
     font-size: 18px;
     font-weight: 700;
 }
-.btn-sm{
+
+.btn-sm {
     padding: 6px 24px;
     font-size: 16px;
     min-width: 100px;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: #00335e;
     border-color: #00335e;
 }
-.btn-outline-primary{
+
+.btn-outline-primary {
     border-color: #00335e;
     color: #00335e;
 }
-.headerLinks{
-    ul{
+
+.headerLinks {
+    ul {
         margin: 0;
         padding: 0;
         list-style: none;
         display: flex;
         gap: 20px;
-        a{
+
+        a {
             font-size: 18px;
             color: black;
             text-decoration: none;
-            &.active{
+
+            &.active {
                 padding-bottom: 4px;
                 // border-bottom: 4px solid #00335e;
                 font-weight: 600;
@@ -95,7 +117,7 @@ header{
         }
     }
 
-    @media(max-width:769px){
+    @media(max-width:769px) {
         position: absolute;
         height: calc(100vh - 80px);
         background-color: white;
@@ -104,96 +126,164 @@ header{
         width: 80%;
         padding: 30px;
         transition: left 0.3 ease-in;
-        ul{
+
+        ul {
             flex-direction: column;
-            li a{
+
+            li a {
                 font-size: 20px;
             }
         }
-        &.active{
+
+        &.active {
             left: 0;
         }
     }
 }
 
-h2{
-    font-size: 28px;
-    margin: 30px 0 60px;
-    border-bottom: 1px solid rgb(158, 158, 158);
-    padding-bottom: 18px;
+.hamburger {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+
+  span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #00335e;
+    border-radius: 2px;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 10px;
+    }
+
+    &:nth-child(3) {
+      top: 20px;
+    }
+  }
+
+  &.open {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        top: 10px;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 10px;
+      }
+    }
+  }
 }
 
-.jobCard{
+
+h2 {
+    font-size: 28px;
+    margin: 30px 0 60px;
+    // border-bottom: 1px solid rgb(158, 158, 158);
+    padding-bottom: 18px;
+    @media(max-width:769px){
+        margin: 30px 0 30px;
+    }
+}
+
+.jobCard {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.014);
     border: 1px solid rgba(0, 0, 0, 0.068);
     padding: 30px;
     background-color: #f7f7ff;
     border-radius: 5px;
-    h3{
+
+    h3 {
         font-size: 22px;
         font-weight: 600;
         display: flex;
         align-items: center;
         gap: 10px;
-        .jobCardIcon i{
+
+        .jobCardIcon i {
             font-size: 30px;
         }
     }
-    .jobCardLocation{
+
+    .jobCardLocation {
         font-size: 20px;
     }
-    .jobMoney{
+
+    .jobMoney {
         font-size: 24px;
         font-weight: 600;
     }
-    .jobStatusPill{
+
+    .jobStatusPill {
         padding: 8px 15px;
         border-radius: 30px;
         font-size: 15px;
         font-weight: 700;
-        &.accepted{
+
+        &.accepted {
             background-color: rgb(137, 236, 137);
         }
-        &.pending{
+
+        &.pending {
             background-color: rgb(255, 218, 138);
         }
     }
 }
-.jobDetailsItem{
+
+.jobDetailsItem {
     display: flex;
     gap: 20px;
-    span:first-child{
+
+    span:first-child {
         font-weight: 600;
     }
-    span{
+
+    span {
         font-size: 18px;
     }
 }
 
-.jobDetailCard{
-    .jobDetailsItem{
-        &:not(:last-child){
+.jobDetailCard {
+    .jobDetailsItem {
+        &:not(:last-child) {
             border-bottom: 1px solid rgb(231, 231, 231);
         }
+
         padding: 15px 0;
         margin: 0;
 
-        span:first-child{
+        span:first-child {
             min-width: 150px;
         }
     }
 }
 
-.modal{
-    .modal-header{
+.modal {
+    .modal-header {
         justify-content: space-between;
-        padding: 20px ;
+        padding: 20px;
         background-color: rgb(209, 209, 255);
-        h3{
+
+        h3 {
             font-size: 26px;
             font-weight: 600;
         }
-        button{
+
+        button {
             font-size: 24px;
             color: black;
             border: none !important;
@@ -201,43 +291,49 @@ h2{
             background: none !important;
         }
     }
-    .modal-body{
+
+    .modal-body {
         padding: 30px;
-        .modal-icon{
-            i{
+
+        .modal-icon {
+            i {
                 font-size: 40px;
                 color: #ff9b2f;
             }
         }
-        h3{
+
+        h3 {
             font-size: 24px;
             font-weight: 700;
         }
-        p{
+
+        p {
             font-size: 18px;
         }
     }
-    &.confirmModal{
-        .modal-content{
+
+    &.confirmModal {
+        .modal-content {
             background-color: #ffead4;
         }
     }
 }
 
-.goBackBtn{
+.goBackBtn {
     background: none !important;
-    border:none !important;
+    border: none !important;
     outline: none !important;
     margin: 30px 0;
     font-weight: 600;
     font-size: 20px;
     color: #00335e;
-    i{
-        font-size: 20px; 
+
+    i {
+        font-size: 20px;
     }
 }
 
-.spinner{
+.spinner {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -248,68 +344,79 @@ h2{
     justify-content: center;
 }
 
-.noStyle{
-    background:none !important;
+.noStyle {
+    background: none !important;
     border: none !important;
     outline: none !important;
 }
 
-.link{
+.link {
     font-weight: 600;
     color: #00335e;
     cursor: pointer;
 }
 
-.body{
+.body {
     height: 100vh;
 }
 
-.error{
+.error {
     font-size: 14px;
     font-weight: 700;
     color: rgb(223, 19, 19);
     margin: 10px 0;
 }
 
-.loginContainer{
+.loginContainer {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
     background-color: white;
     isolation: isolate;
-    .left,.right{
+
+    .left,
+    .right {
         width: 50%;
         height: 100%;
     }
-    .right{
+
+    .right {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .login-bg{
+
+    .login-bg {
         height: 100%;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            
+
         }
     }
-    @media(max-width:769px){
+
+    @media(max-width:769px) {
         flex-direction: column-reverse;
-        .left,.right{
+
+        .left,
+        .right {
             width: 100%;
         }
-        .left{
+
+        .left {
             position: absolute;
             z-index: -1;
-            img{
+
+            img {
                 object-fit: contain;
                 object-position: top;
             }
         }
-        .right{
+
+        .right {
             background-color: white;
             height: auto;
             padding: 60px;
@@ -317,55 +424,64 @@ h2{
     }
 }
 
-label{
+label {
     font-weight: 600;
     margin-bottom: 10px;
     color: black !important;
 }
 
-input[type="radio"] + label{
+input[type="radio"]+label {
     color: #00335e;
 }
 
-.p-tab{
+.p-tab {
     font-size: 18px !important;
 }
-.p-tab-active{
+
+.p-tab-active {
     border-color: #00335e !important;
     color: #00335e !important;
     font-weight: 600 !important;
 }
-.p-tablist-active-bar{
-    background-color: #00335e !important;;
+
+.p-tablist-active-bar {
+    background-color: #00335e !important;
+    ;
 }
-.p-tabpanels{
+
+.p-tabpanels {
     color: black !important;
 }
 
-.table{
-    .actions{
+.table {
+    min-width: 600px;
+    .actions {
         display: flex;
         align-items: center;
         gap: 20px;
-        button{
+
+        button {
             width: 40px;
             height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            &.phone{
+
+            &.phone {
                 background-color: rgb(99, 167, 255) !important;
                 color: black;
             }
-            &.accept{
+
+            &.accept {
                 background-color: rgb(0, 201, 77) !important;
                 color: black;
             }
         }
     }
 
-    td,th{
+    td,
+    th {
         vertical-align: middle;
     }
 }

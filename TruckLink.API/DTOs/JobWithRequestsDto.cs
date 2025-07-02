@@ -2,8 +2,10 @@
 {
     public class JobWithRequestsDto
     {
-        public int JobId { get; set; }
+        public Guid JobId { get; set; }
         public string LoadItem { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public string ContactInfo { get; set; } = null!;
         public string StartLocation { get; set; } = null!;
         public string Destination { get; set; } = null!;
         public decimal Earnings { get; set; }

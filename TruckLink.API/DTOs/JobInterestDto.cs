@@ -2,7 +2,7 @@
 {
     public class JobInterestDto
     {
-        public int DriverId { get; set; }
+        public Guid DriverId { get; set; }
         public string DriverName { get; set; } = null!;
         public string MobileNumber { get; set; } = null!;
         public DateTime RequestedAt { get; set; }

@@ -26,7 +26,6 @@ public class JobsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAvailableJobs()
     {
-
         var jobs = await _jobService.GetAvailableJobsAsync();
         var jobDtos = _mapper.Map<List<JobDto>>(jobs);
 
@@ -46,23 +45,22 @@ public class JobsController : ControllerBase
         if (jobDto == null)
             return BadRequest("Job cannot be null.");
 
-        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-        if (userIdClaim == null)
+        var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!Guid.TryParse(userIdClaim, out var posterId))
             return Unauthorized();
 
         var job = _mapper.Map<Job>(jobDto);
-        job.CreatedByUserId = int.Parse(userIdClaim.Value);
+        job.CreatedByUserId = posterId;
 
         await _jobService.AddJobAsync(job);
-
         return CreatedAtAction(nameof(GetAvailableJobs), new { id = job.Id }, job);
     }
 
     [Authorize(Roles = "Driver")]
     [HttpPost("request/{jobId}")]
-    public async Task<IActionResult> RequestJob(int jobId, [FromQuery] string mobileNumber)
+    public async Task<IActionResult> RequestJob(Guid jobId, [FromQuery] string mobileNumber)
     {
-        var driverId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var driverId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var result = await _jobService.RequestJobAsync(jobId, driverId, mobileNumber);
 
         if (!result)
@@ -84,7 +82,7 @@ public class JobsController : ControllerBase
 
     [Authorize(Roles = "Poster")]
     [HttpGet("requests/{jobId}")]
-    public async Task<IActionResult> GetJobRequests(int jobId)
+    public async Task<IActionResult> GetJobRequests(Guid jobId)
     {
         var interests = await _jobService.GetInterestsForPosterAsync(jobId);
         return Ok(interests);
@@ -92,16 +90,17 @@ public class JobsController : ControllerBase
 
     [Authorize(Roles = "Driver")]
     [HttpGet("driver/{driverId}")]
-    public async Task<IActionResult> GetJobsForDriver(int driverId)
+    public async Task<IActionResult> GetJobsForDriver(Guid driverId)
     {
         var jobs = await _jobService.GetJobsByDriverAsync(driverId);
         return Ok(jobs);
     }
+
     [Authorize(Roles = "Driver")]
     [HttpGet("interested")]
     public async Task<IActionResult> GetJobsDriverIsInterestedIn()
     {
-        var driverId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var driverId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
         var interests = await _jobService.GetJobInterestsByDriverAsync(driverId);
 
@@ -124,7 +123,7 @@ public class JobsController : ControllerBase
     [HttpGet("with-requests")]
     public async Task<IActionResult> GetJobsWithRequestsForPoster()
     {
-        var posterId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var posterId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var jobs = await _jobService.GetJobsWithRequestsForPosterAsync(posterId);
         var jobDtos = _mapper.Map<List<JobWithRequestsDto>>(jobs);
 
@@ -139,24 +138,23 @@ public class JobsController : ControllerBase
 
     [Authorize(Roles = "Poster")]
     [HttpPut("{jobId}")]
-    public async Task<IActionResult> UpdateJob(int jobId, [FromBody] JobDto jobDto)
+    public async Task<IActionResult> UpdateJob(Guid jobId, [FromBody] JobDto jobDto)
     {
-        var posterId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var posterId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var updatedJob = _mapper.Map<Job>(jobDto);
 
         var success = await _jobService.UpdateJobAsync(jobId, updatedJob, posterId);
         if (!success)
-            return BadRequest("You can only update your own unaccepted/non completed jobs.");
+            return BadRequest("You can only update your own unaccepted/non-completed jobs.");
 
         return Ok("Job updated successfully.");
     }
 
     [Authorize(Roles = "Poster")]
     [HttpDelete("{jobId}")]
-    public async Task<IActionResult> DeleteJob(int jobId)
+    public async Task<IActionResult> DeleteJob(Guid jobId)
     {
-        var posterId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
+        var posterId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var success = await _jobService.DeleteJobAsync(jobId, posterId);
         if (!success)
             return BadRequest("You can only delete your own unaccepted jobs.");
@@ -166,10 +164,9 @@ public class JobsController : ControllerBase
 
     [Authorize(Roles = "Poster")]
     [HttpPost("{jobId}/complete")]
-    public async Task<IActionResult> MarkJobAsCompleted(int jobId)
+    public async Task<IActionResult> MarkJobAsCompleted(Guid jobId)
     {
-        var posterId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
+        var posterId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var success = await _jobService.MarkJobAsCompletedAsync(jobId, posterId);
         if (!success)
             return BadRequest("Job not found, not accepted yet, or already completed.");

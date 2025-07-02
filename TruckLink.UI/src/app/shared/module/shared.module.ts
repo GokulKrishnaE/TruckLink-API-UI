@@ -5,6 +5,8 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CommonModule } from '@angular/common';
 import { TabsModule } from 'primeng/tabs';
+import { MenuModule } from 'primeng/menu';
+import { Menu } from 'primeng/menu';
 
 
 
@@ -16,14 +18,18 @@ import { TabsModule } from 'primeng/tabs';
     ToastModule,
     SkeletonModule,
     ProgressSpinnerModule,
-    TabsModule
+    TabsModule,
+    MenuModule,
+    Menu
   ],
   exports:[
     CommonModule,
     ToastModule,
     SkeletonModule,
     ProgressSpinnerModule,
-    TabsModule
+    TabsModule,
+    MenuModule,
+    Menu
   ]
 })
 export class SharedModule { }

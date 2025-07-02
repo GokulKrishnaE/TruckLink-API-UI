@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -20,10 +21,10 @@ namespace TruckLink.Logic.Services
         public async Task<List<Job>> GetAvailableJobsAsync()
         {
             return await _context.Jobs
-             .Include(j => j.Interests)
-             .Where(j => !j.IsAccepted && !j.IsCompleted)
-             .OrderByDescending(j => j.CreatedAt)
-             .ToListAsync();
+                .Include(j => j.Interests)
+                .Where(j => !j.IsAccepted && !j.IsCompleted)
+                .OrderByDescending(j => j.CreatedAt)
+                .ToListAsync();
         }
 
         public async Task AddJobAsync(Job job)
@@ -32,7 +33,7 @@ namespace TruckLink.Logic.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> AcceptJobAsync(int jobId, int driverId)
+        public async Task<bool> AcceptJobAsync(Guid jobId, Guid driverId)
         {
             var job = await _context.Jobs
                 .Include(j => j.Interests)
@@ -52,14 +53,14 @@ namespace TruckLink.Logic.Services
             return true;
         }
 
-        public async Task<List<Job>> GetJobsByDriverAsync(int driverId)
+        public async Task<List<Job>> GetJobsByDriverAsync(Guid driverId)
         {
             return await _context.Jobs
                 .Where(j => j.AcceptedByDriverId == driverId)
                 .ToListAsync();
         }
 
-        public async Task<List<JobInterest>> GetInterestsForPosterAsync(int posterId)
+        public async Task<List<JobInterest>> GetInterestsForPosterAsync(Guid posterId)
         {
             return await _context.JobInterests
                 .Include(i => i.Driver)
@@ -68,7 +69,7 @@ namespace TruckLink.Logic.Services
                 .ToListAsync();
         }
 
-        public async Task<bool> RequestJobAsync(int jobId, int driverId, string mobileNumber)
+        public async Task<bool> RequestJobAsync(Guid jobId, Guid driverId, string mobileNumber)
         {
             var job = await _context.Jobs
                 .Include(j => j.Interests)
@@ -86,17 +87,16 @@ namespace TruckLink.Logic.Services
                 JobId = jobId,
                 DriverId = driverId,
                 MobileNumber = mobileNumber,
-                RequestedAt = System.DateTime.UtcNow,
+                RequestedAt = DateTime.UtcNow,
                 IsAccepted = false
             };
 
             _context.JobInterests.Add(interest);
             await _context.SaveChangesAsync();
-
             return true;
         }
 
-        public async Task<List<Job>> GetJobsDriverHasRequestedAsync(int driverId)
+        public async Task<List<Job>> GetJobsDriverHasRequestedAsync(Guid driverId)
         {
             return await _context.JobInterests
                 .Include(i => i.Job)
@@ -105,14 +105,16 @@ namespace TruckLink.Logic.Services
                 .Distinct()
                 .ToListAsync();
         }
-        public async Task<List<JobInterest>> GetJobInterestsByDriverAsync(int driverId)
+
+        public async Task<List<JobInterest>> GetJobInterestsByDriverAsync(Guid driverId)
         {
             return await _context.JobInterests
                 .Include(i => i.Job)
                 .Where(i => i.DriverId == driverId)
                 .ToListAsync();
         }
-        public async Task<List<Job>> GetJobsWithRequestsForPosterAsync(int posterId)
+
+        public async Task<List<Job>> GetJobsWithRequestsForPosterAsync(Guid posterId)
         {
             return await _context.Jobs
                 .Where(j => j.CreatedByUserId == posterId)
@@ -122,9 +124,10 @@ namespace TruckLink.Logic.Services
                 .ToListAsync();
         }
 
-        public async Task<bool> UpdateJobAsync(int jobId, Job updatedJob, int posterId)
+        public async Task<bool> UpdateJobAsync(Guid jobId, Job updatedJob, Guid posterId)
         {
-            var existingJob = await _context.Jobs.FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+            var existingJob = await _context.Jobs
+                .FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
 
             if (existingJob == null || existingJob.IsAccepted || existingJob.IsCompleted)
                 return false;
@@ -140,14 +143,12 @@ namespace TruckLink.Logic.Services
             return true;
         }
 
-        public async Task<bool> DeleteJobAsync(int jobId, int posterId)
+        public async Task<bool> DeleteJobAsync(Guid jobId, Guid posterId)
         {
-            var job = await _context.Jobs.FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+            var job = await _context.Jobs
+                .FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
 
-            if (job.IsAccepted || job.IsCompleted)
-                return false;
-
-            if (job == null || job.IsAccepted)
+            if (job == null || job.IsAccepted || job.IsCompleted)
                 return false;
 
             _context.Jobs.Remove(job);
@@ -155,9 +156,11 @@ namespace TruckLink.Logic.Services
             return true;
         }
 
-        public async Task<bool> MarkJobAsCompletedAsync(int jobId, int posterId)
+        public async Task<bool> MarkJobAsCompletedAsync(Guid jobId, Guid posterId)
         {
-            var job = await _context.Jobs.FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+            var job = await _context.Jobs
+                .FirstOrDefaultAsync(j => j.Id == jobId && j.CreatedByUserId == posterId);
+
             if (job == null || !job.IsAccepted || job.IsCompleted)
                 return false;
 

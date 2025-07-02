@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseApiUrl: 'https://localhost:7146/api/'
+  baseApiUrl: 'https://trucklink-api-ui.onrender.com/api/'
 };

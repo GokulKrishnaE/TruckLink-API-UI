@@ -99,7 +99,7 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
-// Use migrations automatically
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TruckLinkDbContext>();
@@ -111,6 +111,24 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+if (app.Environment.IsProduction())
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        try
+        {
+            var db = scope.ServiceProvider.GetRequiredService<TruckLinkDbContext>();
+            db.Database.Migrate();
+            logger.LogInformation("Migrations applied successfully.");
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "An error occurred while applying migrations.");
+        }
+    }
 }
 
 // Optional: comment out if Render does not support HTTPS properly

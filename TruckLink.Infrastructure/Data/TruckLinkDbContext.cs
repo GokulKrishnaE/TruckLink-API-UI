@@ -17,6 +17,10 @@ namespace TruckLink.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<User>().ToTable("users");
+            modelBuilder.Entity<Job>().ToTable("jobs");
+            modelBuilder.Entity<JobInterest>().ToTable("jobinterests");
+
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();

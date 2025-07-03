@@ -12,8 +12,8 @@ using TruckLink.Infrastructure.Data;
 namespace TruckLink.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckLinkDbContext))]
-    [Migration("20250702121734_newColumnsAddedForJOb")]
-    partial class newColumnsAddedForJOb
+    [Migration("20250703100051_PostgresMigration")]
+    partial class PostgresMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,7 +85,7 @@ namespace TruckLink.Infrastructure.Migrations
 
                     b.HasIndex("CreatedByUserId");
 
-                    b.ToTable("Jobs");
+                    b.ToTable("jobs", (string)null);
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.JobInterest", b =>
@@ -116,7 +116,7 @@ namespace TruckLink.Infrastructure.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.ToTable("JobInterests");
+                    b.ToTable("jobinterests", (string)null);
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.User", b =>
@@ -149,7 +149,7 @@ namespace TruckLink.Infrastructure.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.Job", b =>

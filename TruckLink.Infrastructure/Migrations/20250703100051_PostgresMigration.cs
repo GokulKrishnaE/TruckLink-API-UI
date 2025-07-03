@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TruckLink.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class FreshMigration : Migration
+    public partial class PostgresMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "users",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -23,15 +23,17 @@ namespace TruckLink.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Jobs",
+                name: "jobs",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     LoadItem = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactInfo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StartLocation = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Destination = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Earnings = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -45,23 +47,23 @@ namespace TruckLink.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Jobs", x => x.Id);
+                    table.PrimaryKey("PK_jobs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Jobs_Users_AcceptedByDriverId",
+                        name: "FK_jobs_users_AcceptedByDriverId",
                         column: x => x.AcceptedByDriverId,
-                        principalTable: "Users",
+                        principalTable: "users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
-                        name: "FK_Jobs_Users_CreatedByUserId",
+                        name: "FK_jobs_users_CreatedByUserId",
                         column: x => x.CreatedByUserId,
-                        principalTable: "Users",
+                        principalTable: "users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "JobInterests",
+                name: "jobinterests",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -73,44 +75,44 @@ namespace TruckLink.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_JobInterests", x => x.Id);
+                    table.PrimaryKey("PK_jobinterests", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_JobInterests_Jobs_JobId",
+                        name: "FK_jobinterests_jobs_JobId",
                         column: x => x.JobId,
-                        principalTable: "Jobs",
+                        principalTable: "jobs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_JobInterests_Users_DriverId",
+                        name: "FK_jobinterests_users_DriverId",
                         column: x => x.DriverId,
-                        principalTable: "Users",
+                        principalTable: "users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_JobInterests_DriverId",
-                table: "JobInterests",
+                name: "IX_jobinterests_DriverId",
+                table: "jobinterests",
                 column: "DriverId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_JobInterests_JobId",
-                table: "JobInterests",
+                name: "IX_jobinterests_JobId",
+                table: "jobinterests",
                 column: "JobId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Jobs_AcceptedByDriverId",
-                table: "Jobs",
+                name: "IX_jobs_AcceptedByDriverId",
+                table: "jobs",
                 column: "AcceptedByDriverId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Jobs_CreatedByUserId",
-                table: "Jobs",
+                name: "IX_jobs_CreatedByUserId",
+                table: "jobs",
                 column: "CreatedByUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_Email",
-                table: "Users",
+                name: "IX_users_Email",
+                table: "users",
                 column: "Email",
                 unique: true);
         }
@@ -119,13 +121,13 @@ namespace TruckLink.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "JobInterests");
+                name: "jobinterests");
 
             migrationBuilder.DropTable(
-                name: "Jobs");
+                name: "jobs");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "users");
         }
     }
 }

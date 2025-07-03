@@ -1,15 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "angular.json",
-      "use": "@vercel/angular"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "public": "dist/TruckLink",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

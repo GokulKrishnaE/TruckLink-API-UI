@@ -17,32 +17,41 @@ builder.Configuration
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
     .AddEnvironmentVariables();
 
-// CORS setup
+// Read allowed origins from config
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+
+// Log origins to console for debugging
+Console.WriteLine("Allowed origins:");
+if (allowedOrigins != null)
+{
+    foreach (var origin in allowedOrigins)
+    {
+        Console.WriteLine(origin);
+    }
+}
+else
+{
+    Console.WriteLine("No allowed origins configured.");
+}
+
+// Configure CORS with origins and AllowCredentials
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins(allowedOrigins ?? Array.Empty<string>())
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();  // Important if frontend sends credentials
     });
 });
 
 // Get connection string once
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Configure DbContext based on environment
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-        options.UseNpgsql(connectionString));
-}
-else
-{
-    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-        options.UseNpgsql(connectionString));
-}
+// Configure DbContext for Postgres
+builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 // Add services
 builder.Services.AddControllers();
@@ -84,11 +93,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
+// Set port for Render environment or fallback
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
+// Use migrations automatically
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TruckLinkDbContext>();
@@ -102,10 +113,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Optional: comment out if Render does not support HTTPS properly
+// app.UseHttpsRedirection();
 
 app.UseRouting();
 
+// IMPORTANT: UseCors between UseRouting and UseAuthentication
 app.UseCors("CorsPolicy");
 
 app.UseAuthentication();

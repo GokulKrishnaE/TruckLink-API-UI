@@ -12,7 +12,7 @@ using TruckLink.Infrastructure.Data;
 namespace TruckLink.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckLinkDbContext))]
-    [Migration("20250705075622_postgresmigration")]
+    [Migration("20250705081003_postgresmigration")]
     partial class postgresmigration
     {
         /// <inheritdoc />

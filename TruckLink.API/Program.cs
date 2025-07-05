@@ -48,15 +48,36 @@ builder.Services.AddCors(options =>
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+var env = builder.Environment;
+
+// Load appsettings.json + env-specific overrides
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables();
+
+// Register DbContext with single key: "DefaultConnection"
+if (env.IsDevelopment())
+{
+    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+}
+else if (env.IsProduction())
+{
+    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+}
+
 //builder.Services.AddDbContext<TruckLinkDbContext>(options =>
 //    options.UseSqlServer(connectionString));
 
-builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 2, 0))
-    )
-);
+//builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+//    options.UseMySql(
+//        builder.Configuration.GetConnectionString("DefaultConnection"),
+//        new MySqlServerVersion(new Version(8, 2, 0))
+//    )
+//);
 
 // Add services
 builder.Services.AddControllers();
@@ -105,11 +126,11 @@ builder.WebHost.UseUrls($"http://*:{port}");
 var app = builder.Build();
 
 
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<TruckLinkDbContext>();
-    db.Database.Migrate();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<TruckLinkDbContext>();
+//    db.Database.Migrate();
+//}
 
 // Middleware pipeline
 if (app.Environment.IsDevelopment())

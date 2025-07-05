@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
 using System.IO;
 
@@ -13,16 +12,26 @@ namespace TruckLink.Infrastructure.Data
         {
             var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..\\TruckLink.API");
 
-            IConfigurationRoot configuration = new ConfigurationBuilder()
+            var config = new ConfigurationBuilder()
                 .SetBasePath(basePath)
                 .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings.Development.json", optional: true)
+                .AddEnvironmentVariables()
                 .Build();
 
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            var environment = config["ASPNETCORE_ENVIRONMENT"] ?? "Development";
+            var connectionString = config.GetConnectionString("DefaultConnection");
 
             var optionsBuilder = new DbContextOptionsBuilder<TruckLinkDbContext>();
 
-            optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 2, 0)));
+            if (environment == "Development")
+            {
+                optionsBuilder.UseNpgsql(connectionString);
+            }
+            else
+            {
+                optionsBuilder.UseNpgsql(connectionString); // PostgreSQL for prod
+            }
 
             return new TruckLinkDbContext(optionsBuilder.Options);
         }

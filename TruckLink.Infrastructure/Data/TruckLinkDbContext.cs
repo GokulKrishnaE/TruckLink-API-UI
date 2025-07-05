@@ -16,9 +16,9 @@ namespace TruckLink.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<User>().ToTable("users");
-            modelBuilder.Entity<Job>().ToTable("jobs");
-            modelBuilder.Entity<JobInterest>().ToTable("job_interests");
+            modelBuilder.Entity<User>().ToTable("users","public"); ;
+            modelBuilder.Entity<Job>().ToTable("jobs","public"); ;
+            modelBuilder.Entity<JobInterest>().ToTable("job_interests","public"); ;
 
             // Custom Fluent Configurations
             modelBuilder.Entity<User>()

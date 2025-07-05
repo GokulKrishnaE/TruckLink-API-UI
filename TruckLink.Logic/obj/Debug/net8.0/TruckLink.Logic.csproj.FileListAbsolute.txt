@@ -10,9 +10,9 @@ G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.Generated
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.AssemblyInfoInputs.cache
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.AssemblyInfo.cs
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.csproj.CoreCompileInputs.cache
+G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.sourcelink.json
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLin.F6C4E54C.Up2Date
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.dll
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\refint\TruckLink.Logic.dll
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.pdb
 G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\ref\TruckLink.Logic.dll
-G:\Projects\TruckLink\TruckLink.Logic\obj\Debug\net8.0\TruckLink.Logic.sourcelink.json

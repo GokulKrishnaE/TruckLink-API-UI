@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TruckLink.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using TruckLink.Infrastructure.Data;
 namespace TruckLink.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckLinkDbContext))]
-    partial class TruckLinkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250703112626_DbResetToSql")]
+    partial class DbResetToSql
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

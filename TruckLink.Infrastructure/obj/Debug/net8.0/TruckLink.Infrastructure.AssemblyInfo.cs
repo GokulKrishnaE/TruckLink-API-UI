@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TruckLink.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23f0daeb619c5b23e604ccef4fdd859d20f3e2b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aefe69961b16050fa9d536f11c8d69e8306e50ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("TruckLink.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TruckLink.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

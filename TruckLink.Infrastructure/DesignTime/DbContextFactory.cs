@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System;
 using System.IO;
 
 namespace TruckLink.Infrastructure.Data
@@ -9,7 +11,6 @@ namespace TruckLink.Infrastructure.Data
     {
         public TruckLinkDbContext CreateDbContext(string[] args)
         {
-            // IMPORTANT: Set base path to the API project folder or where appsettings.json actually is
             var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..\\TruckLink.API");
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
@@ -17,11 +18,11 @@ namespace TruckLink.Infrastructure.Data
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            var optionsBuilder = new DbContextOptionsBuilder<TruckLinkDbContext>();
-
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            optionsBuilder.UseSqlServer(connectionString);
+            var optionsBuilder = new DbContextOptionsBuilder<TruckLinkDbContext>();
+
+            optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 2, 0)));
 
             return new TruckLinkDbContext(optionsBuilder.Options);
         }

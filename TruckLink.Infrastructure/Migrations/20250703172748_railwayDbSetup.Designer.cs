@@ -12,8 +12,8 @@ using TruckLink.Infrastructure.Data;
 namespace TruckLink.Infrastructure.Migrations
 {
     [DbContext(typeof(TruckLinkDbContext))]
-    [Migration("20250703100051_PostgresMigration")]
-    partial class PostgresMigration
+    [Migration("20250703172748_railwayDbSetup")]
+    partial class railwayDbSetup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,7 +85,7 @@ namespace TruckLink.Infrastructure.Migrations
 
                     b.HasIndex("CreatedByUserId");
 
-                    b.ToTable("jobs", (string)null);
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.JobInterest", b =>
@@ -116,7 +116,7 @@ namespace TruckLink.Infrastructure.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.ToTable("jobinterests", (string)null);
+                    b.ToTable("JobInterests");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.User", b =>
@@ -149,7 +149,7 @@ namespace TruckLink.Infrastructure.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.Job", b =>

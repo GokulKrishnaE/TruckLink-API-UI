@@ -5,8 +5,8 @@ G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.GeneratedMS
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.AssemblyInfoInputs.cache
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.AssemblyInfo.cs
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.csproj.CoreCompileInputs.cache
+G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.sourcelink.json
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.dll
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\refint\TruckLink.Core.dll
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.pdb
 G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\ref\TruckLink.Core.dll
-G:\Projects\TruckLink\TruckLink.Core\obj\Debug\net8.0\TruckLink.Core.sourcelink.json

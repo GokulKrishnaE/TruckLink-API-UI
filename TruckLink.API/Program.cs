@@ -46,12 +46,17 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Get connection string once
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Configure DbContext for Postgres
+//builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+
 builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 2, 0))
+    )
+);
 
 // Add services
 builder.Services.AddControllers();

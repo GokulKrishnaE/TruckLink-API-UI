@@ -2,14 +2,21 @@
     <div class="widgetBox">
     <h2 class="mt-0">Jobs Your are Interested in</h2>
     <div class="jobsList">
-        <div class="row g-4">
-            <div class="col-lg-4" *ngFor="let interestedJob of interestedJobs">
-                <div class="jobCard">
-                    <h3><span class="jobCardIcon"><i class="pi pi-truck"></i></span>{{interestedJob.job.loadItem}}</h3>
-                    <p class="jobCardLocation"><span class="from me-3"><i class="pi pi-map-marker"></i>{{interestedJob.job.startLocation}}</span><span class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span class="to"><i class="pi pi-map-marker"></i>{{interestedJob.job.destination}}</span></p>
-                    <p class="jobMoney">₹ {{interestedJob.job.earnings}}</p>
-                    <p class="jobStatus"><span class="jobStatusPill" [ngClass]="{ 'accepted': interestedJob.isAcceptedForDriver, 'pending': !interestedJob.isAcceptedForDriver }">{{interestedJob.isAcceptedForDriver ? 'Accepted' : 'Request Pending'}}</span></p>
+        <div *ngIf="interestedJobs.length">
+            <div class="row g-4">
+                <div class="col-lg-4" *ngFor="let interestedJob of interestedJobs">
+                    <div class="jobCard">
+                        <h3><span class="jobCardIcon"><i class="pi pi-truck"></i></span>{{interestedJob.job.loadItem}}</h3>
+                        <p class="jobCardLocation"><span class="from me-3"><i class="pi pi-map-marker"></i>{{interestedJob.job.startLocation}}</span><span class="me-3 arrow"><i class="pi pi-arrow-right"></i></span><span class="to"><i class="pi pi-map-marker"></i>{{interestedJob.job.destination}}</span></p>
+                        <p class="jobMoney">₹ {{interestedJob.job.earnings}}</p>
+                        <p class="jobStatus"><span class="jobStatusPill" [ngClass]="{ 'accepted': interestedJob.isAcceptedForDriver, 'pending': !interestedJob.isAcceptedForDriver }">{{interestedJob.isAcceptedForDriver ? 'Accepted' : 'Request Pending'}}</span></p>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div *ngIf="!interestedJobs.length">
+            <div class="alert alert-info">
+                <p class="mb-0">There is no jobs that you are interested in</p>
             </div>
         </div>
     </div>

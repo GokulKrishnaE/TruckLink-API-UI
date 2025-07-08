@@ -192,7 +192,7 @@ a {
 
 h2 {
     font-size: 28px;
-    margin: 30px 0 60px;
+    margin: 30px 0 30px;
     // border-bottom: 1px solid rgb(158, 158, 158);
     padding-bottom: 18px;
     @media(max-width:769px){
@@ -483,5 +483,49 @@ input[type="radio"]+label {
     td,
     th {
         vertical-align: middle;
+    }
+}
+
+
+// forms 
+
+.form-control,.input-group-text{
+    border-radius: 0;
+    border: 1px solid #a7bdd1;
+}
+
+.input-group-text{
+    background: none !important;
+}
+
+.input-group{
+    input{
+        border-right: none;
+    }
+    .input-group-text{
+        border-left: none;
+    }
+}
+
+p-select{
+    width: 100%;
+    border-radius: 0 !important;
+    border: 1px solid #a7bdd1 !important;
+}
+
+.p-select-option.p-select-option-selected{
+    background-color: #b9dfff !important;
+    color: #00335e !important;
+}
+.p-select-label{
+    padding: 6px 12px !important;
+}
+.filterIcon{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    i{
+        color: #00335e;
     }
 }

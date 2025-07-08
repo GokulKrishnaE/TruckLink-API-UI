@@ -4,6 +4,49 @@
 
         <div  *ngIf="!jobDetail">
             <h2 class="mt-0">Available Jobs</h2>
+            <div class="filterSec mb-4">
+                <span class="filterIcon">
+                    Filter <i class="pi pi-filter"></i>
+                </span>
+                <div class="row">
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <div class="searchJob">
+                            <div class="input-group">
+                                <input type="text" class="form-control" pInputText placeholder="Search"
+                                [(ngModel)]="filters.search"
+                                (ngModelChange)="onFilterChange()" />
+                                <div class="input-group-text">
+                                    <i class="pi pi-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="filters">
+                            <div class="row">
+                                    <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                        <p-select [options]="options.distance"
+                                        [(ngModel)]="filters.distance"
+                                        placeholder="Select Distance"
+                                        (onChange)="onFilterChange()"></p-select>
+                                </div>
+                                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                    <p-select [options]="options.startPlace"
+                                        [(ngModel)]="filters.startPlace"
+                                        placeholder="Select Start Place"
+                                        (onChange)="onFilterChange()"></p-select>
+                                </div>
+                                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                    <p-select [options]="options.endPlace"
+                                        [(ngModel)]="filters.endPlace"
+                                        placeholder="Select End Place"
+                                        (onChange)="onFilterChange()"></p-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div *ngIf="jobs.length;else noJobs">
                 <div class="jobsList">
                     <div class="row g-4">

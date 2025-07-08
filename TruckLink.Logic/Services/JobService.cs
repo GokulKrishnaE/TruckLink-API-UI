@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using TruckLink.Core.Entities;
 using TruckLink.Core.Interfaces;
+using TruckLink.Core.models;
 using TruckLink.Infrastructure.Data;
 
 namespace TruckLink.Logic.Services
@@ -18,11 +20,66 @@ namespace TruckLink.Logic.Services
             _context = context;
         }
 
-        public async Task<List<Job>> GetAvailableJobsAsync()
+        public async Task<List<Job>> GetAvailableJobsAsync(JobFilter filter)
         {
-            return await _context.Jobs
+            var query = _context.Jobs
                 .Include(j => j.Interests)
                 .Where(j => !j.IsAccepted && !j.IsCompleted)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(filter.Search))
+            {
+                var searchTerm = filter.Search.ToLower();
+
+                query = query.Where(j =>
+                    j.LoadItem.ToLower().Contains(searchTerm) ||
+                    j.Description.ToLower().Contains(searchTerm) ||
+                    j.StartLocation.ToLower().Contains(searchTerm) ||
+                    j.Destination.ToLower().Contains(searchTerm) ||
+                    j.DistanceKm.ToString().Contains(searchTerm) ||   // if numeric fields
+                    j.Earnings.ToString().Contains(searchTerm)
+                );
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.StartPlace))
+            {
+                query = query.Where(j => j.StartLocation == filter.StartPlace);
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.EndPlace))
+            {
+                query = query.Where(j => j.Destination == filter.EndPlace);
+            }
+
+            if (!string.IsNullOrEmpty(filter.Distance))
+            {
+                int? minDistance = null;
+                int? maxDistance = null;
+
+                if (filter.Distance.Contains('+'))
+                {
+                    var minStr = filter.Distance.Replace("+", "");
+                    if (int.TryParse(minStr, out int minVal))
+                        minDistance = minVal;
+                }
+                else if (filter.Distance.Contains('-'))
+                {
+                    var parts = filter.Distance.Split('-');
+                    if (parts.Length == 2)
+                    {
+                        if (int.TryParse(parts[0], out int minVal)) minDistance = minVal;
+                        if (int.TryParse(parts[1], out int maxVal)) maxDistance = maxVal;
+                    }
+                }
+
+                if (minDistance.HasValue)
+                    query = query.Where(j => j.DistanceKm >= minDistance.Value);
+
+                if (maxDistance.HasValue)
+                    query = query.Where(j => j.DistanceKm <= maxDistance.Value);
+            }
+
+            return await query
                 .OrderByDescending(j => j.CreatedAt)
                 .ToListAsync();
         }

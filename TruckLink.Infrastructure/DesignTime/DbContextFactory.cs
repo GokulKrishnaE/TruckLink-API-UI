@@ -26,11 +26,11 @@ namespace TruckLink.Infrastructure.Data
 
             if (environment == "Development")
             {
-                optionsBuilder.UseNpgsql(connectionString);
+                optionsBuilder.UseSqlServer(connectionString);
             }
             else
             {
-                optionsBuilder.UseNpgsql(connectionString); // PostgreSQL for prod
+                optionsBuilder.UseSqlServer(connectionString); // PostgreSQL for prod
             }
 
             return new TruckLinkDbContext(optionsBuilder.Options);

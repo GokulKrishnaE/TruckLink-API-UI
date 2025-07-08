@@ -7,15 +7,16 @@ using TruckLink.Core.Interfaces;
 using TruckLink.Infrastructure.Data;
 using TruckLink.Infrastructure.Repositories;
 using TruckLink.Logic.Services;
+using TruckLink.API.middlewares.TruckLink.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuration setup
-builder.Configuration
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
-    .AddEnvironmentVariables();
+//builder.Configuration
+//    .SetBasePath(Directory.GetCurrentDirectory())
+//    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+//    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+//    .AddEnvironmentVariables();
 
 // Read allowed origins from config
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
@@ -61,7 +62,7 @@ builder.Configuration
 if (env.IsDevelopment())
 {
     builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 }
 else if (env.IsProduction())
 {
@@ -120,8 +121,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 // Set port for Render environment or fallback
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://*:{port}");
+//var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+//builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
@@ -131,6 +132,9 @@ var app = builder.Build();
 //    var db = scope.ServiceProvider.GetRequiredService<TruckLinkDbContext>();
 //    db.Database.Migrate();
 //}
+
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 // Middleware pipeline
 if (app.Environment.IsDevelopment())

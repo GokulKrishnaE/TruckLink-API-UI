@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TruckLink.Core.Entities;
+using TruckLink.Core.models;
 
 namespace TruckLink.Core.Interfaces
 {
     public interface IJobService
     {
-        Task<List<Job>> GetAvailableJobsAsync();
+        Task<List<Job>> GetAvailableJobsAsync(JobFilter filter);
 
         Task AddJobAsync(Job job);
 

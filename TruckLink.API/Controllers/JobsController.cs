@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using TruckLink.API.DTOs;
 using TruckLink.Core.Entities;
 using TruckLink.Core.Interfaces;
+using TruckLink.Core.models;
 
 namespace TruckLink.API.Controllers;
 
@@ -22,11 +23,18 @@ public class JobsController : ControllerBase
         _jobService = jobService;
         _mapper = mapper;
     }
-
     [HttpGet]
-    public async Task<IActionResult> GetAvailableJobs()
+    public async Task<IActionResult> GetAvailableJobs([FromQuery] JobFilterDto dto)
     {
-        var jobs = await _jobService.GetAvailableJobsAsync();
+        var filter = new JobFilter
+        {
+            Search = dto.Search,
+            Distance = dto.Distance,
+            StartPlace = dto.StartPlace,
+            EndPlace = dto.EndPlace
+        };
+
+        var jobs = await _jobService.GetAvailableJobsAsync(filter);
         var jobDtos = _mapper.Map<List<JobDto>>(jobs);
 
         return Ok(new ApiResponse<object>

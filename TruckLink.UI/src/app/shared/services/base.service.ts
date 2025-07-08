@@ -16,8 +16,8 @@ export class BaseService {
     }
 
 
-    get<T>(url: string, params?: HttpParams): Observable<T> {
-        return this.http.get<any>(this.baseUrl+url, { params });
+    get<T>(url: string, options?: { params?: HttpParams }): Observable<T> {
+        return this.http.get<T>(this.baseUrl + url, options);
     }
 
     post<T>(url: string, body: any, headers?: HttpHeaders): Observable<T> {

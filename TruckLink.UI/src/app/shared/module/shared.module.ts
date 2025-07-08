@@ -5,9 +5,8 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CommonModule } from '@angular/common';
 import { TabsModule } from 'primeng/tabs';
-import { MenuModule } from 'primeng/menu';
-import { Menu } from 'primeng/menu';
-
+import {SelectModule} from 'primeng/select'
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,21 +14,21 @@ import { Menu } from 'primeng/menu';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ToastModule,
     SkeletonModule,
     ProgressSpinnerModule,
     TabsModule,
-    MenuModule,
-    Menu
+    SelectModule
   ],
   exports:[
     CommonModule,
+    FormsModule,
     ToastModule,
     SkeletonModule,
     ProgressSpinnerModule,
     TabsModule,
-    MenuModule,
-    Menu
+    SelectModule
   ]
 })
 export class SharedModule { }

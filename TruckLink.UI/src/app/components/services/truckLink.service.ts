@@ -5,6 +5,7 @@ import { AuthService } from "../../shared/services/auth.service";
 import { BaseService } from "../../shared/services/base.service";
 import { CommonService } from "../../shared/services/common.service";
 import { JobModel } from "../../shared/models/job.model";
+import { HttpParams } from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -37,8 +38,15 @@ export class TruckLinkService {
         return this.baseService.post('auth/register', registerModel);
     }
 
-    getJobs() {
-        return this.baseService.get('jobs');
+   getJobs(filters: { search?: string; distance?: number | null; startPlace?: string | null; endPlace?: string | null }) {
+        let params = new HttpParams();
+
+        if (filters.search) params = params.set('search', filters.search);
+        if (filters.distance != null) params = params.set('distance', filters.distance.toString());
+        if (filters.startPlace) params = params.set('startPlace', filters.startPlace);
+        if (filters.endPlace) params = params.set('endPlace', filters.endPlace);
+
+        return this.baseService.get('jobs', { params });
     }
 
     getInterestedJobs(){

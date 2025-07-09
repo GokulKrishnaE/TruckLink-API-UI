@@ -411,9 +411,12 @@ h2 {
             z-index: -1;
 
             img {
-                object-fit: contain;
+                width: 100%;
+                height: 50%;
+                object-fit: cover;
                 object-position: top;
-            }
+                display: block;
+        }
         }
 
         .right {

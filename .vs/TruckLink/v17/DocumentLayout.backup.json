@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "G:\\Projects\\TruckLink\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\middlewares\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\middlewares\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|g:\\projects\\trucklink\\trucklink.logic\\services\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4269A860-97E6-4086-87DD-F86ECC502481}|TruckLink.Logic\\TruckLink.Logic.csproj|solutionrelative:trucklink.logic\\services\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|g:\\projects\\trucklink\\trucklink.infrastructure\\data\\trucklinkdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9A7EF49-1F71-431D-8C71-C27F9F29D24B}|TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj|solutionrelative:trucklink.infrastructure\\data\\trucklinkdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|solutionrelative:trucklink.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5ABC28EA-C755-416F-8B8E-7E7FE180A570}|TruckLink.API\\TruckLink.API.csproj|g:\\projects\\trucklink\\trucklink.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -182,11 +186,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "ErrorHandlerMiddleware.cs",
+              "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "TruckLink.API\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "RelativeToolTip": "TruckLink.API\\Middlewares\\ErrorHandlerMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:09:37.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "JobFilter.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\models\\JobFilter.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\models\\JobFilter.cs",
@@ -199,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "JobFilterDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobFilterDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobFilterDto.cs",
@@ -212,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\appsettings.json",
               "RelativeDocumentMoniker": "TruckLink.API\\appsettings.json",
@@ -225,20 +242,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Program.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\Program.cs",
-              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Program.cs",
-              "RelativeToolTip": "TruckLink.API\\Program.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHsAAAAuAAAAAAAAAA==",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Program.cs*",
+              "RelativeToolTip": "TruckLink.API\\Program.cs*",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T17:28:32.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "TruckLinkDbContext.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Data\\TruckLinkDbContext.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Data\\TruckLinkDbContext.cs",
@@ -251,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "DbContextFactory.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\DesignTime\\DbContextFactory.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\DesignTime\\DbContextFactory.cs",
@@ -264,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TruckLink.API.csproj",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\TruckLink.API.csproj",
               "RelativeDocumentMoniker": "TruckLink.API\\TruckLink.API.csproj",
@@ -276,12 +293,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "JobsController.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\JobsController.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\Controllers\\JobsController.cs",
-              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\JobsController.cs*",
-              "RelativeToolTip": "TruckLink.API\\Controllers\\JobsController.cs*",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "TruckLink.API\\Controllers\\JobsController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAEwC4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T17:29:21.831Z",
@@ -289,12 +306,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "IJobService.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IJobService.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\Interfaces\\IJobService.cs",
-              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IJobService.cs*",
-              "RelativeToolTip": "TruckLink.Core\\Interfaces\\IJobService.cs*",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IJobService.cs",
+              "RelativeToolTip": "TruckLink.Core\\Interfaces\\IJobService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-29T06:42:45.773Z",
@@ -302,20 +319,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "JobService.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\JobService.cs",
               "RelativeDocumentMoniker": "TruckLink.Logic\\Services\\JobService.cs",
-              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\JobService.cs*",
-              "RelativeToolTip": "TruckLink.Logic\\Services\\JobService.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwCYAAAAgAAAAAAAAAA==",
+              "ToolTip": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\JobService.cs",
+              "RelativeToolTip": "TruckLink.Logic\\Services\\JobService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T17:27:43.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "JobDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobDto.cs",
@@ -328,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TruckLink.API\\appsettings.Development.json",
@@ -341,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "appsettings.Production.json",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\appsettings.Production.json",
               "RelativeDocumentMoniker": "TruckLink.API\\appsettings.Production.json",
@@ -353,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "20250705081003_postgresmigration.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250705081003_postgresmigration.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250705081003_postgresmigration.cs",
@@ -365,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "20250705075622_postgresmigration.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250705075622_postgresmigration.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250705075622_postgresmigration.cs",
@@ -377,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AuthController.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\Controllers\\AuthController.cs",
@@ -389,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "TruckLink.Infrastructure.csproj",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\TruckLink.Infrastructure.csproj",
@@ -401,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "JobDetailDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobDetailDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobDetailDto.cs",
@@ -413,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\RegisterDto.cs",
@@ -425,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\LoginDto.cs",
@@ -437,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "20250703100051_PostgresMigration.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250703100051_PostgresMigration.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250703100051_PostgresMigration.cs",
@@ -448,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Dockerfile",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
@@ -460,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "JobWithRequestsDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobWithRequestsDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobWithRequestsDto.cs",
@@ -472,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "JobInterestDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\JobInterestDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\JobInterestDto.cs",
@@ -484,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "InterestedJobDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\InterestedJobDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\InterestedJobDto.cs",
@@ -496,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "AcceptJobRequestDto.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\AcceptJobRequestDto.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\AcceptJobRequestDto.cs",
@@ -508,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ApiResponse.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\DTOs\\ApiResponse.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\DTOs\\ApiResponse.cs",
@@ -520,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "User.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\User.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\Entities\\User.cs",
@@ -532,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "JobInterest.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\JobInterest.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\Entities\\JobInterest.cs",
@@ -544,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Job.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Entities\\Job.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\Entities\\Job.cs",
@@ -556,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\Interfaces\\IAuthService.cs",
@@ -568,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "20250702110320_idChangeToGuid.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250702110320_idChangeToGuid.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250702110320_idChangeToGuid.cs",
@@ -579,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "TruckLink.Logic.csproj",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Logic\\TruckLink.Logic.csproj",
               "RelativeDocumentMoniker": "TruckLink.Logic\\TruckLink.Logic.csproj",
@@ -591,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.API\\Mappers\\MappingProfile.cs",
               "RelativeDocumentMoniker": "TruckLink.API\\Mappers\\MappingProfile.cs",
@@ -603,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IRepository.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "TruckLink.Core\\Interfaces\\IRepository.cs",
@@ -615,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "20250629070841_AddCreatedByUserToJobDeleteChange.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629070841_AddCreatedByUserToJobDeleteChange.cs",
@@ -626,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "20250629071336_AddCreatedByUserWithRestrict.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629071336_AddCreatedByUserWithRestrict.cs",
@@ -637,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "20250629070604_AddCreatedByUserToJob2.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629070604_AddCreatedByUserToJob2.cs",
@@ -648,7 +665,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "20250629070745_AddCreatedByUserToJob3.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629070745_AddCreatedByUserToJob3.cs",
@@ -659,7 +676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "20250629071110_AddCreatedByUserToJob4.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Migrations\\20250629071110_AddCreatedByUserToJob4.cs",
@@ -670,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "AuthService.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Logic\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "TruckLink.Logic\\Services\\AuthService.cs",
@@ -682,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "TruckLink.Core.csproj",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Core\\TruckLink.Core.csproj",
               "RelativeDocumentMoniker": "TruckLink.Core\\TruckLink.Core.csproj",
@@ -694,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "Repository.cs",
               "DocumentMoniker": "G:\\Projects\\TruckLink\\TruckLink.Infrastructure\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "TruckLink.Infrastructure\\Repositories\\Repository.cs",

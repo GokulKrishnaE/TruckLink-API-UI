@@ -29,10 +29,15 @@ export class RegisterComponent {
       this.registerModel = this.registerForm.value
       this.truckLinkService.register(this.registerModel).subscribe({
         next: (data:any)=>{
-          this.commonService.showToast('success','Success',data.message)
+          if(data.isSuccess){
+              this.commonService.showToast('success','Success',data.message)
+          }
+          else{
+              this.commonService.showToast('error','Error',data.message)
+          }
         },
         error: (error:any)=>{
-          console.log(error)
+         this.commonService.showToast('error','Error',error.error.message)
         }
       })
     } else {

@@ -1,76 +1,89 @@
+<app-confirm-modal *ngIf="unsavedForm" [confirmModalMessage]="unsavedModelMessage"
+    (confirmResponse)="onConfirmResponse($event)"></app-confirm-modal>
 <div class="container">
   <div class="widgetBox">
      <h2 class="mt-0">Add a trip</h2>
-    <div class="row">
+     <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="row">
       <div class="col-lg-6">
-        <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" novalidate>
-          <div class="mb-3">
+        <div class="mb-3">
             <label class="mb-2 fw-bold">Load Item:</label>
             <input type="text" formControlName="loadItem"  class="form-control"/>
             <div *ngIf="jobForm.get('loadItem')?.touched && jobForm.get('loadItem')?.invalid" class="error">
               Required
             </div>
           </div>
-          <div class="mb-3">
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-3">
             <label class="mb-2 fw-bold">Details</label>
             <textarea rows="4" formControlName="description"  class="form-control"></textarea>
             <div *ngIf="jobForm.get('description')?.touched && jobForm.get('description')?.invalid" class="error">
               Required
             </div>
           </div>
-          <div class="mb-3">
+      </div>
+      <div class="col-lg-6">
+         <div class="mb-3">
             <label class="mb-2 fw-bold">Contact Info</label>
             <textarea rows="4" formControlName="contactInfo"  class="form-control"></textarea>
             <div *ngIf="jobForm.get('contactInfo')?.touched && jobForm.get('contactInfo')?.invalid" class="error">
               Required
             </div>
           </div>
-
-          <div class="mb-3">
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-3">
             <label class="mb-2 fw-bold">Start Location:</label>
             <input type="text" formControlName="startLocation" class="form-control" />
             <div *ngIf="jobForm.get('startLocation')?.touched && jobForm.get('startLocation')?.invalid" class="error">
               Required
             </div>
           </div>
-
-          <div class="mb-3">
+      </div>
+      <div class="col-lg-6">
+         <div class="mb-3">
             <label class="mb-2 fw-bold">Destination:</label>
             <input type="text" formControlName="destination" class="form-control" />
             <div *ngIf="jobForm.get('destination')?.touched && jobForm.get('destination')?.invalid" class="error">
               Required
             </div>
           </div>
-
-          <div class="mb-3">
+      </div>
+      <div class="col-lg-6">
+         <div class="mb-3">
             <label class="mb-2 fw-bold">Earnings (₹):</label>
             <input type="number" formControlName="earnings" class="form-control" />
             <div *ngIf="jobForm.get('earnings')?.touched && jobForm.get('earnings')?.invalid" class="error">
               Must be a positive number
             </div>
           </div>
-
-          <div class="mb-3">
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-3">
             <label class="mb-2 fw-bold">Distance (km):</label>
             <input type="number" formControlName="distanceKm" class="form-control" />
             <div *ngIf="jobForm.get('distanceKm')?.touched && jobForm.get('distanceKm')?.invalid" class="error">
               Must be a positive number
             </div>
           </div>
-
-          <div>
+      </div>
+      <div class="col-lg-6">
+          <div class="mb-5">
             <label class="mb-2 fw-bold">Map URL:</label>
             <input type="url" formControlName="mapUrl" class="form-control" />
             <div *ngIf="jobForm.get('mapUrl')?.touched && jobForm.get('mapUrl')?.invalid" class="error">
               Enter a valid URL
             </div>
           </div>
-
-          <div class="text-end">
-              <button class="btn btn-primary mt-4" type="submit">Submit</button>
+      </div>
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between">
+              <button class="btn btn-outline-primary" (click)="navigateToHome()">Home</button>
+              <button class="btn btn-primary mt-4" type="submit" [disabled]="!jobForm.valid">Submit</button>
           </div>
-        </form>
       </div>
     </div>
+     </form>
   </div>
 </div>

@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Net;
+using System.Security.Claims;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -37,13 +38,8 @@ public class JobsController : ControllerBase
         var jobs = await _jobService.GetAvailableJobsAsync(filter);
         var jobDtos = _mapper.Map<List<JobDto>>(jobs);
 
-        return Ok(new ApiResponse<object>
-        {
-            IsSuccess = true,
-            Message = "Jobs fetched successfully",
-            Code = 200,
-            Data = new { jobs = jobDtos }
-        });
+
+        return Ok(ApiResponse<object>.Success(new { jobs = jobDtos }, "Jobs fetched successfully", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -51,17 +47,17 @@ public class JobsController : ControllerBase
     public async Task<IActionResult> AddJob([FromBody] JobDto jobDto)
     {
         if (jobDto == null)
-            return BadRequest("Job cannot be null.");
+            return BadRequest(ApiResponse<object>.Error("Job cannot be null", (int)HttpStatusCode.BadRequest));
 
         var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (!Guid.TryParse(userIdClaim, out var posterId))
-            return Unauthorized();
+            return Unauthorized(ApiResponse<object>.Error("You are unauthorized", (int)HttpStatusCode.Unauthorized));
 
         var job = _mapper.Map<Job>(jobDto);
         job.CreatedByUserId = posterId;
 
         await _jobService.AddJobAsync(job);
-        return CreatedAtAction(nameof(GetAvailableJobs), new { id = job.Id }, job);
+        return CreatedAtAction(nameof(GetAvailableJobs), new { id = job.Id }, ApiResponse<object>.Success(job,"Job has been successfully created",(int) HttpStatusCode.Created));
     }
 
     [Authorize(Roles = "Driver")]
@@ -72,9 +68,9 @@ public class JobsController : ControllerBase
         var result = await _jobService.RequestJobAsync(jobId, driverId, mobileNumber);
 
         if (!result)
-            return BadRequest("Already requested or job not available.");
+            return BadRequest(ApiResponse<string>.Error("Already requested or job not available.", (int)HttpStatusCode.BadRequest));
 
-        return Ok("Interest sent.");
+        return Ok(ApiResponse<string>.Success("Interest sent.", "Success", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -83,9 +79,8 @@ public class JobsController : ControllerBase
     {
         var success = await _jobService.AcceptJobAsync(requestDto.JobId, requestDto.DriverId);
         if (!success)
-            return BadRequest("Unable to accept request. Possibly already accepted.");
-
-        return Ok("Job accepted successfully.");
+            return BadRequest(ApiResponse<string>.Error("Unable to accept request. Possibly already accepted.",(int)HttpStatusCode.BadRequest));
+        return Ok(ApiResponse<string>.Success(null, "Job accepted successfully", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -93,7 +88,7 @@ public class JobsController : ControllerBase
     public async Task<IActionResult> GetJobRequests(Guid jobId)
     {
         var interests = await _jobService.GetInterestsForPosterAsync(jobId);
-        return Ok(interests);
+        return Ok(ApiResponse<object>.Success(interests,"Interests fetched successfully",(int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Driver")]
@@ -101,7 +96,7 @@ public class JobsController : ControllerBase
     public async Task<IActionResult> GetJobsForDriver(Guid driverId)
     {
         var jobs = await _jobService.GetJobsByDriverAsync(driverId);
-        return Ok(jobs);
+        return Ok(ApiResponse<object>.Success(jobs, "Jobs fetched successfully", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Driver")]
@@ -118,13 +113,7 @@ public class JobsController : ControllerBase
             IsAcceptedForDriver = i.Job.IsAccepted && i.Job.AcceptedByDriverId == driverId
         }).ToList();
 
-        return Ok(new ApiResponse<object>
-        {
-            IsSuccess = true,
-            Message = "Jobs you've shown interest in.",
-            Code = 200,
-            Data = new { jobs = interestedJobDtos }
-        });
+        return Ok(ApiResponse<object>.Success(new { jobs = interestedJobDtos }, "Jobs you've shown interest in.", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -135,13 +124,7 @@ public class JobsController : ControllerBase
         var jobs = await _jobService.GetJobsWithRequestsForPosterAsync(posterId);
         var jobDtos = _mapper.Map<List<JobWithRequestsDto>>(jobs);
 
-        return Ok(new ApiResponse<object>
-        {
-            IsSuccess = true,
-            Message = "Jobs with driver requests fetched successfully",
-            Code = 200,
-            Data = new { jobs = jobDtos }
-        });
+        return Ok(ApiResponse<object>.Success(new { jobs = jobDtos }, "Jobs with driver requests fetched successfully", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -153,9 +136,9 @@ public class JobsController : ControllerBase
 
         var success = await _jobService.UpdateJobAsync(jobId, updatedJob, posterId);
         if (!success)
-            return BadRequest("You can only update your own unaccepted/non-completed jobs.");
+            return BadRequest(ApiResponse<string>.Error("You can only update your own unaccepted/non-completed jobs.",(int)HttpStatusCode.BadRequest));
 
-        return Ok("Job updated successfully.");
+        return Ok(ApiResponse<string>.Success(null, "Job updated successfully", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -165,9 +148,9 @@ public class JobsController : ControllerBase
         var posterId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var success = await _jobService.DeleteJobAsync(jobId, posterId);
         if (!success)
-            return BadRequest("You can only delete your own unaccepted jobs.");
+            return BadRequest(ApiResponse<string>.Error("You can only delete your own unaccepted jobs.",(int)HttpStatusCode.BadRequest));
 
-        return Ok("Job deleted successfully.");
+        return Ok(ApiResponse<string>.Success(null, "Job deleted successfully", (int)HttpStatusCode.OK));
     }
 
     [Authorize(Roles = "Poster")]
@@ -177,8 +160,8 @@ public class JobsController : ControllerBase
         var posterId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var success = await _jobService.MarkJobAsCompletedAsync(jobId, posterId);
         if (!success)
-            return BadRequest("Job not found, not accepted yet, or already completed.");
+            return BadRequest(ApiResponse<string>.Error("Job not found, not accepted yet, or already completed.",(int)HttpStatusCode.BadRequest));
 
-        return Ok("Job marked as completed.");
+        return Ok(ApiResponse<string>.Success(null, "Job marked as completed", (int)HttpStatusCode.OK));
     }
 }

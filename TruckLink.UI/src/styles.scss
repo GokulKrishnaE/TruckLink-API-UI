@@ -79,6 +79,10 @@ a {
     font-weight: 700;
 }
 
+button[disabled]{
+    opacity: 0.5;
+}
+
 .btn-sm {
     padding: 6px 24px;
     font-size: 16px;
@@ -90,9 +94,18 @@ a {
     border-color: #00335e;
 }
 
+.btn:disabled{
+    background-color: #00335e !important;
+    border-color: #00335e !important;
+}
 .btn-outline-primary {
     border-color: #00335e;
     color: #00335e;
+}
+
+.btn-outline-primary:hover{
+    background-color: #00335e;
+    border-color: #00335e;
 }
 
 .headerLinks {
@@ -531,4 +544,9 @@ p-select{
     i{
         color: #00335e;
     }
+}
+
+.alert{
+    border-radius: 0;
+    padding: 8px;
 }

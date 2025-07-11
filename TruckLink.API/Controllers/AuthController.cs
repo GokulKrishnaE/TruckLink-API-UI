@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
+using Microsoft.AspNetCore.Mvc;
 using TruckLink.API.DTOs;
 using TruckLink.Core.Interfaces;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -24,47 +25,21 @@ public class AuthController : ControllerBase
 
         var success = await _authService.RegisterAsync(dto.Name, dto.Email, dto.Password, dto.Role);
         if (!success)
-            return BadRequest(new ApiResponse<object>
-            {
-                IsSuccess = false,
-                Message = "Email already in use.",
-                Code = 400
-            });
+            return Conflict(ApiResponse<object>.Error("Email already in use", (int) HttpStatusCode.Conflict));
 
-        return Ok(new ApiResponse<object>
-        {
-            IsSuccess = true,
-            Message = "Registration successful",
-            Code = 200
-        });
+        return Ok(ApiResponse<object>.Success(null,"Registration successful", (int) HttpStatusCode.OK));
     }
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
         if (!ModelState.IsValid)
-            return BadRequest(new ApiResponse<object>
-            {
-                IsSuccess = false,
-                Message = "Payload is not correct",
-                Code = 500
-            });
+            return BadRequest(ApiResponse<object>.Error("Payload is not correct",(int) HttpStatusCode.BadRequest));
 
         var token = await _authService.LoginAsync(dto.Email, dto.Password);
         if (token == null)
-            return Unauthorized(new ApiResponse<object>
-            {
-                IsSuccess = false,
-                Message = "Credentials are wrong",
-                Code = 500
-            });
+            return Unauthorized(ApiResponse<object>.Error("Credentials are wrong", (int) HttpStatusCode.Unauthorized));
 
-        return Ok(new ApiResponse<object>
-        {
-            IsSuccess = true,
-            Message = "Login successful",
-            Code = 200,
-            Data = new { token = token }
-        });
+        return Ok(ApiResponse<object>.Success(new { token = token }, "Login successful", (int)HttpStatusCode.OK));
     }
 }

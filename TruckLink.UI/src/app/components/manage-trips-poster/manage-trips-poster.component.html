@@ -124,7 +124,7 @@
                                             <td>
                                                 <div class="actions">
                                                     <button class="noStyle phone"><i class="pi pi-phone"></i></button>
-                                                    <button (click)="acceptJobConfirm(i.driverId)" class="noStyle accept"><i
+                                                    <button (click)="acceptJobConfirm(i.driverId)" class="noStyle accept" [disabled]="jobDetail[0].isAccepted"><i
                                                             class="pi pi-check-circle"></i></button>
                                                 </div>
                                             </td>

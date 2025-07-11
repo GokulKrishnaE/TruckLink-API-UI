@@ -8,6 +8,7 @@ import { MyTripsDriverComponent } from './components/my-trips-driver/my-trips-dr
 import { ManageTripsPosterComponent } from './components/manage-trips-poster/manage-trips-poster.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { RoleGuard } from './shared/guards/role.guard';
+import { UnsavedChangesGuard } from './shared/guards/unsaved-changes.guard';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
     path: 'add-job', 
     component: AddJobComponent, 
     canActivate: [AuthGuard, RoleGuard], 
-    data: { expectedRole: 'Poster' } 
+    canDeactivate: [UnsavedChangesGuard],
+    data: { expectedRole: 'Poster' }
   },
   { 
     path: 'my-trips', 

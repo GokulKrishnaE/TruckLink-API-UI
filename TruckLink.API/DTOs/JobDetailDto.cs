@@ -2,7 +2,7 @@
 {
     public class JobDetailsDto
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string LoadItem { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string ContactInfo { get; set; } = null!;
@@ -14,7 +14,7 @@
         public bool IsAccepted { get; set; }
 
         public bool IsCompleted { get; set; }
-        public Guid? AcceptedByDriverId { get; set; }
+        public int? AcceptedByDriverId { get; set; }
         public DateTime CreatedAt { get; set; }
 
         // List of driver requests (interests)

@@ -2,7 +2,7 @@
 {
     public class JobWithRequestsDto
     {
-        public Guid JobId { get; set; }
+        public int JobId { get; set; }
         public string LoadItem { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string ContactInfo { get; set; } = null!;

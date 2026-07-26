@@ -59,19 +59,19 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 // Register DbContext with single key: "DefaultConnection"
-if (env.IsDevelopment())
-{
-    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-}
-else if (env.IsProduction())
-{
-    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-}
+//if (env.IsDevelopment())
+//{
+//    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+//        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//}
+//else if (env.IsProduction())
+//{
+//    builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+//        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+//}
 
-//builder.Services.AddDbContext<TruckLinkDbContext>(options =>
-//    options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<TruckLinkDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 //builder.Services.AddDbContext<TruckLinkDbContext>(options =>
 //    options.UseMySql(

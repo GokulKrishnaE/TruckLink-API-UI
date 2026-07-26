@@ -5,7 +5,7 @@ namespace TruckLink.Core.Entities
 {
     public class Job
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required, MaxLength(100)]
         public string LoadItem { get; set; } = null!;
@@ -33,18 +33,21 @@ namespace TruckLink.Core.Entities
 
         public bool IsCompleted { get; set; } = false;
 
-        public Guid? AcceptedByDriverId { get; set; }
+        public int? AcceptedByDriverId { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         [ForeignKey(nameof(AcceptedByDriverId))]
         public User? AcceptedByDriver { get; set; }
 
-        public Guid CreatedByUserId { get; set; }
+        public int CreatedByUserId { get; set; }
 
         [ForeignKey(nameof(CreatedByUserId))]
         public User CreatedByUser { get; set; } = null!;
 
         public ICollection<JobInterest> Interests { get; set; } = new List<JobInterest>();
+
+        public int? CompanyId { get; set; }
+        public Company? Company { get; set; }
     }
 }

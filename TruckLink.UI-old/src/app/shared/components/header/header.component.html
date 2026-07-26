@@ -16,6 +16,12 @@
                     <a routerLink="manage-trips" routerLinkActive="active">Manage your trips</a>
                 </li>
                 <li *ngIf="isPoster$ | async">
+                    <a routerLink="add-job" routerLinkActive="active">My Company</a>
+                </li>
+                <li *ngIf="isDriver$ | async">
+                    <a routerLink="my-trips" routerLinkActive="active">Companies</a>
+                </li>
+                <li *ngIf="isPoster$ | async">
                     <a routerLink="add-job" routerLinkActive="active">Add trip</a>
                 </li>
                 <li class="d-md-none">

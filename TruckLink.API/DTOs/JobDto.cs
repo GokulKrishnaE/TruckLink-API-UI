@@ -4,7 +4,7 @@ namespace TruckLink.API.DTOs
 {
     public class JobDto
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Load item is required.")]
         public string LoadItem { get; set; } = null!;
@@ -34,5 +34,7 @@ namespace TruckLink.API.DTOs
         public string MapUrl { get; set; } = null!;
 
         public bool IsCompleted { get; set; } // optional to require this — up to your use case
+
+        public int? CompanyId { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace TruckLink.API.DTOs
     public class JobInterestDto
     {
         [Required(ErrorMessage = "Driver ID is required.")]
-        public Guid DriverId { get; set; }
+        public int DriverId { get; set; }
 
         [Required(ErrorMessage = "Driver name is required.")]
         [StringLength(100, ErrorMessage = "Driver name cannot exceed 100 characters.")]

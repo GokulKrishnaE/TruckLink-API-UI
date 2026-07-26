@@ -18,6 +18,7 @@ export class HomeComponent {
   interested = false
   userMobNumber!:string
 
+
    filters = {
     search: '',
     distance: null,
@@ -145,3 +146,7 @@ export class HomeComponent {
     this.interested = false
   }
 }
+function Of() {
+  throw new Error('Function not implemented.');
+}
+

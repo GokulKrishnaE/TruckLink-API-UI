@@ -8,7 +8,9 @@ namespace TruckLink.Core.Interfaces
 {
     public interface IAuthService
     {
-        Task<bool> RegisterAsync(string name, string email, string password, string role);
-        Task<string?> LoginAsync(string email, string password);
+        Task<bool> RegisterAsync(string name, string email, string password);
+        Task<(string accessToken, string refreshToken)?> LoginAsync(string email, string password);
+        Task<string> refresh(string refreshToken);
+        Task<List<string>> GetUserRolesAsync(int userId);
     }
 }

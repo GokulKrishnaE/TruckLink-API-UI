@@ -9,7 +9,7 @@ namespace TruckLink.Core.Entities
 {
     public class User
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -22,13 +22,14 @@ namespace TruckLink.Core.Entities
         [Required]
         public string PasswordHash { get; set; } = null!;
 
-        // Either "Poster" or "Driver"
-        [Required]
-        [MaxLength(20)]
-        public string Role { get; set; } = null!;
-
         // Only for Drivers
         public ICollection<Job> PostedJobs { get; set; } = new List<Job>();
         public ICollection<Job> AcceptedJobs { get; set; } = new List<Job>();
+
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
+
+        public ICollection<UserRoleMapping> UserRoles { get; set; } = new List<UserRoleMapping>();
+        public ICollection<UserCompanyMapping> UserCompanies { get; set; } = new List<UserCompanyMapping>();
     }
 }

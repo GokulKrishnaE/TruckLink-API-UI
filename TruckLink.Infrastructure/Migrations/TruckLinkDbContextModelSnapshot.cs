@@ -2,8 +2,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TruckLink.Infrastructure.Data;
 
 #nullable disable
@@ -18,165 +18,230 @@ namespace TruckLink.Infrastructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.17")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("TruckLink.Core.Entities.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Companies");
+                });
 
             modelBuilder.Entity("TruckLink.Core.Entities.Job", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("AcceptedByDriverId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("accepted_by_driver_id");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<int?>("AcceptedByDriverId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ContactInfo")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("contact_info");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CreatedByUserId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("created_by_user_id");
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Destination")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("destination");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<double>("DistanceKm")
-                        .HasColumnType("double precision")
-                        .HasColumnName("distance_km");
+                        .HasColumnType("float");
 
                     b.Property<decimal>("Earnings")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("earnings");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("IsAccepted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_accepted");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsCompleted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_completed");
+                        .HasColumnType("bit");
 
                     b.Property<string>("LoadItem")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("load_item");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("MapUrl")
                         .HasMaxLength(500)
-                        .HasColumnType("character varying(500)")
-                        .HasColumnName("map_url");
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("StartLocation")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("start_location");
+                        .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("Id")
-                        .HasName("p_k_jobs");
+                    b.HasKey("Id");
 
                     b.HasIndex("AcceptedByDriverId");
 
+                    b.HasIndex("CompanyId");
+
                     b.HasIndex("CreatedByUserId");
 
-                    b.ToTable("jobs");
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.JobInterest", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("DriverId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("driver_id");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsAccepted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_accepted");
+                        .HasColumnType("bit");
 
-                    b.Property<Guid>("JobId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("job_id");
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
 
                     b.Property<string>("MobileNumber")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("mobile_number");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RequestedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("requested_at");
+                        .HasColumnType("datetime2");
 
-                    b.HasKey("Id")
-                        .HasName("p_k_job_interests");
+                    b.HasKey("Id");
 
-                    b.HasIndex("DriverId")
-                        .HasDatabaseName("i_x_job_interests_driver_id");
+                    b.HasIndex("DriverId");
 
-                    b.HasIndex("JobId")
-                        .HasDatabaseName("i_x_job_interests_job_id");
+                    b.HasIndex("JobId");
 
-                    b.ToTable("job_interests");
+                    b.ToTable("JobInterests");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("email");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("name");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("password_hash");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasColumnName("role");
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id")
-                        .HasName("p_k_users");
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
 
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("users");
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.UserCompanyMapping", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "CompanyId");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("UserCompanies");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.UserRoleMapping", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.Job", b =>
@@ -186,6 +251,11 @@ namespace TruckLink.Infrastructure.Migrations
                         .HasForeignKey("AcceptedByDriverId")
                         .OnDelete(DeleteBehavior.SetNull);
 
+                    b.HasOne("TruckLink.Core.Entities.Company", "Company")
+                        .WithMany("Jobs")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("TruckLink.Core.Entities.User", "CreatedByUser")
                         .WithMany("PostedJobs")
                         .HasForeignKey("CreatedByUserId")
@@ -193,6 +263,8 @@ namespace TruckLink.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("AcceptedByDriver");
+
+                    b.Navigation("Company");
 
                     b.Navigation("CreatedByUser");
                 });
@@ -203,19 +275,71 @@ namespace TruckLink.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("DriverId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("f_k_job_interests__users_driver_id");
+                        .IsRequired();
 
                     b.HasOne("TruckLink.Core.Entities.Job", "Job")
                         .WithMany("Interests")
                         .HasForeignKey("JobId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("f_k_job_interests_jobs_job_id");
+                        .IsRequired();
 
                     b.Navigation("Driver");
 
                     b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.User", b =>
+                {
+                    b.HasOne("TruckLink.Core.Entities.Company", null)
+                        .WithMany("Users")
+                        .HasForeignKey("CompanyId");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.UserCompanyMapping", b =>
+                {
+                    b.HasOne("TruckLink.Core.Entities.Company", "Company")
+                        .WithMany("UserCompanies")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TruckLink.Core.Entities.User", "User")
+                        .WithMany("UserCompanies")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.UserRoleMapping", b =>
+                {
+                    b.HasOne("TruckLink.Core.Entities.Role", "Role")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TruckLink.Core.Entities.User", "User")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TruckLink.Core.Entities.Company", b =>
+                {
+                    b.Navigation("Jobs");
+
+                    b.Navigation("UserCompanies");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("TruckLink.Core.Entities.Job", b =>
@@ -223,11 +347,20 @@ namespace TruckLink.Infrastructure.Migrations
                     b.Navigation("Interests");
                 });
 
+            modelBuilder.Entity("TruckLink.Core.Entities.Role", b =>
+                {
+                    b.Navigation("UserRoles");
+                });
+
             modelBuilder.Entity("TruckLink.Core.Entities.User", b =>
                 {
                     b.Navigation("AcceptedJobs");
 
                     b.Navigation("PostedJobs");
+
+                    b.Navigation("UserCompanies");
+
+                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,9 +5,9 @@ namespace TruckLink.API.DTOs
     public class AcceptJobRequestDto
     {
         [Required]
-        public Guid JobId { get; set; }
+        public int JobId { get; set; }
 
         [Required]
-        public Guid DriverId { get; set; }
+        public int DriverId { get; set; }
     }
 }
